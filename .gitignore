@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Benchmark test results / run artifacts (do not publish)
+**/claude_progress/
+**/opencode_progress/
+**/_smoke/
+*.output
+output.log
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Scratch
+*.bak
+*~
+
+# Benchmark result images (kept as tables in README, not published)
+benchmarks/
