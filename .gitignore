@@ -23,5 +23,10 @@ output.log
 *.bak
 *~
 
-# Benchmark result images (kept as tables in README, not published)
-benchmarks/
+# Benchmark result images (kept as tables in README, not published; raw CSVs ARE published)
+benchmarks/*.jpg
+benchmarks/*.jpeg
+benchmarks/*.png
+
+# Manuscript draft (not published)
+pgi ms - Google 文档.pdf

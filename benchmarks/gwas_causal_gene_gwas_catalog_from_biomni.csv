@@ -1,0 +1,351 @@
+﻿prompt,task_name,answer
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {APOA1},{APOA4},{APOA5},{APOC3},{BUD13},{PAFAH1B2},{SIDT2},{SIK3},{TAGLN},{ZPR1}
+",gwas_causal_gene_gwas_catalog,APOA4 
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {APOA1},{APOA4},{APOA5},{APOC3},{BUD13},{PAFAH1B2},{PCSK7},{RNF214},{SIDT2},{SIK3},{TAGLN},{ZPR1}
+",gwas_causal_gene_gwas_catalog,APOA4
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Metabolite levels (N-acetylasparagine)
+Genes in locus: {ACTG2},{ALMS1},{BOLA3},{C2orf78},{CCT7},{DGUOK},{DUSP11},{EGR4},{FBXO41},{MOB1A},{MTHFD2},{NAT8},{NAT8B},{NOTO},{PRADC1},{SMYD5},{STAMBP},{TET3},{TPRKB}
+",gwas_causal_gene_gwas_catalog,NAT8
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Metabolite levels (N-acetyltryptophan)
+Genes in locus: {ACY3},{AIP},{ALDH3B1},{ALDH3B2},{ANKRD13D},{CABP2},{CABP4},{CARNS1},{CDK2AP2},{CLCF1},{CORO1B},{ENSG00000256514},{GPR152},{GRK2},{GSTP1},{KDM2A},{NDUFS8},{NDUFV1},{NUDT8},{PITPNM1},{POLD4},{PPP1CA},{PTPRCAP},{RAD9A},{RHOD},{RPS6KB2},{SSH3},{SYT12},{TBC1D10C},{TBX10},{TMEM134},{UNC93B1}
+",gwas_causal_gene_gwas_catalog,ACY3
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Prostate cancer
+Genes in locus: {AFM},{AFP},{ALB},{ANKRD17},{CXCL1},{CXCL2},{CXCL3},{CXCL5},{CXCL6},{CXCL8},{ENSG00000288796},{PF4},{PF4V1},{PPBP},{RASSF6}
+",gwas_causal_gene_gwas_catalog,RASSF6
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Moyamoya disease
+Genes in locus: {CARD14},{CCDC40},{EIF4A3},{ENDOV},{ENSG00000289764},{GAA},{NPTX1},{RNF213},{RPTOR},{SGSH},{SLC26A11},{TBC1D16}
+",gwas_causal_gene_gwas_catalog,RNF213
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Mitochondrial DNA copy number (adjusted)
+Genes in locus: {ACSBG2},{CAPS},{CATSPERD},{DUS3L},{ENSG00000267157},{ENSG00000267314},{ENSG00000267740},{FUT3},{FUT5},{FUT6},{HSD11B1L},{LONP1},{MICOS13},{MLLT1},{NDUFA11},{NRTN},{PRR22},{PTPRS},{RANBP3},{RFX2},{RPL36},{SAFB},{SAFB2},{TINCR},{VMAC},{ZNRF4}
+",gwas_causal_gene_gwas_catalog,LONP1
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Body mass index
+Genes in locus: {ADCY6},{ARF3},{C1QL4},{CACNB3},{CCDC65},{CCNT1},{DDN},{DDX23},{DHH},{DNAJC22},{ENSG00000272822},{ENSG00000288710},{FAM186B},{FKBP11},{FMNL3},{KCNH3},{KMT2D},{LMBR1L},{MCRS1},{PRKAG1},{PRPF40B},{PRPH},{RHEBL1},{RND1},{SPATS2},{TEX49},{TROAP},{TUBA1A},{TUBA1B},{TUBA1C},{WNT1},{WNT10B}
+",gwas_causal_gene_gwas_catalog,PRKAG1
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ATP6V1B2},{CSGALNACT1},{INTS10},{LPL},{LZTS1},{SLC18A1}
+",gwas_causal_gene_gwas_catalog,LPL
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ABHD2},{ACAN},{AEN},{DET1},{ENSG00000173867},{FANCI},{HAPLN3},{ISG20},{MFGE8},{MRPL46},{MRPS11},{POLG},{POLGARF},{RLBP1}
+",gwas_causal_gene_gwas_catalog,ACAN
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sum score
+Genes in locus: {ARL2BP},{BBS2},{CCL17},{CCL22},{CETP},{CIAPIN1},{CPNE2},{CX3CL1},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUDT21},{NUP93},{OGFOD1},{PLLP},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ATP6V1B2},{CSGALNACT1},{INTS10},{LPL},{LZTS1},{SLC18A1}
+",gwas_causal_gene_gwas_catalog,LPL
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Platelet side fluorescence distribution width
+Genes in locus: {ENSG00000239395},{GCSAML},{NLRP3},{OR11L1},{OR13G1},{OR14A16},{OR14A2},{OR14C36},{OR14K1},{OR14L1P},{OR1C1},{OR2AJ1},{OR2AK2},{OR2B11},{OR2C3},{OR2G2},{OR2G3},{OR2L13},{OR2L2},{OR2L3},{OR2L5},{OR2L8},{OR2M2},{OR2M3},{OR2M4},{OR2M5},{OR2M7},{OR2T12},{OR2T33},{OR2T8},{OR2W3},{OR6F1},{OR9H1P},{TRIM58}
+",gwas_causal_gene_gwas_catalog,TRIM58
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {AMFR},{ARL2BP},{BBS2},{CCL17},{CCL22},{CETP},{CPNE2},{CX3CL1},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUDT21},{NUP93},{OGFOD1},{PLLP},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {CITED4},{CTPS1},{EXO5},{FOXO6},{KCNQ4},{NFYC},{RIMS3},{SCMH1},{SLFNL1},{SMAP2},{ZFP69},{ZFP69B},{ZNF684}
+",gwas_causal_gene_gwas_catalog,SLFNL1
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Central nucleus volume
+Genes in locus: {BANK1},{MANBA},{NFKB1},{SLC39A8},{UBE2D3}
+",gwas_causal_gene_gwas_catalog,SLC39A8
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ARL2BP},{BBS2},{CCL17},{CCL22},{CETP},{CIAPIN1},{COQ9},{CPNE2},{CX3CL1},{DOK4},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUP93},{PLLP},{POLR2C},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ARL2BP},{BBS2},{CCL17},{CCL22},{CETP},{CIAPIN1},{COQ9},{CPNE2},{CX3CL1},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUP93},{OGFOD1},{PLLP},{POLR2C},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sum score
+Genes in locus: {ARL2BP},{BBS2},{CCL17},{CCL22},{CETP},{CIAPIN1},{COQ9},{CPNE2},{CX3CL1},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUP93},{OGFOD1},{PLLP},{POLR2C},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Smoking initiation (MTAG)
+Genes in locus: {BDNF},{CCDC34},{KIF18A},{LGR4},{LIN7C},{METTL15}
+",gwas_causal_gene_gwas_catalog,BDNF
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Anterior amygdaloid area volume
+Genes in locus: {BANK1},{CISD2},{MANBA},{NFKB1},{SLC39A8},{SLC9B1},{UBE2D3}
+",gwas_causal_gene_gwas_catalog,SLC39A8
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {AMFR},{ARL2BP},{BBS2},{CCL22},{CETP},{CPNE2},{CX3CL1},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUDT21},{NUP93},{OGFOD1},{PLLP},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Metabolite levels (propyl 4-hydroxybenzoate sulfate)
+Genes in locus: {APOBR},{ATP2A1},{ATXN2L},{CD19},{CLN3},{EIF3C},{EIF3CL},{ENSG00000261832},{GSG1L},{IL27},{LAT},{NFATC2IP},{NPIPB6},{NPIPB7},{NPIPB8},{NPIPB9},{NUPR1},{RABEP2},{SBK1},{SGF29},{SH2B1},{SPNS1},{SULT1A1},{SULT1A2},{TUFM},{XPO6}
+",gwas_causal_gene_gwas_catalog,SULT1A1
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Triglyceride to HDL cholesterol ratio
+Genes in locus: {BACE1},{CEP164},{DSCAML1},{FXYD2},{FXYD6},{FXYD6-FXYD2},{IL10RA},{PAFAH1B2},{PCSK7},{RNF214},{SIDT2},{SIK3},{SMIM35},{TAGLN},{TMPRSS13}
+",gwas_causal_gene_gwas_catalog,CEP164
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {B4GALNT3},{CCDC77},{IQSEC3},{KDM5A},{NINJ2},{RAD52},{SLC6A12},{SLC6A13},{WNK1}
+",gwas_causal_gene_gwas_catalog,B4GALNT3
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ARL2BP},{BBS2},{CCL17},{CCL22},{CETP},{CIAPIN1},{COQ9},{CPNE2},{CX3CL1},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUP93},{OGFOD1},{PLLP},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {APOA1},{APOA4},{APOA5},{APOC3},{BUD13},{PAFAH1B2},{SIK3},{ZPR1}
+",gwas_causal_gene_gwas_catalog,APOA4
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Central nucleus volume
+Genes in locus: {BANK1},{MANBA},{NFKB1},{SLC39A8}
+",gwas_causal_gene_gwas_catalog,SLC39A8
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ARL2BP},{BBS2},{CCL17},{CCL22},{CETP},{CIAPIN1},{COQ9},{CPNE2},{CX3CL1},{DOK4},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUP93},{PLLP},{POLR2C},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Medial nucleus volume
+Genes in locus: {BANK1},{PPP3CA},{SLC39A8}
+",gwas_causal_gene_gwas_catalog,SLC39A8
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sum score
+Genes in locus: {ABHD1},{AGBL5},{ATRAID},{BABAM2},{C2orf16},{CAD},{CCDC121},{CGREF1},{DNAJC5G},{DPYSL5},{EIF2B4},{EMILIN1},{FNDC4},{GCKR},{GPN1},{GTF3C2},{IFT172},{KHK},{KRTCAP3},{MAPRE3},{MPV17},{MRPL33},{NRBP1},{OST4},{PPM1G},{PREB},{PRR30},{RBKS},{SLC30A3},{SLC4A1AP},{SLC5A6},{SNX17},{SUPT7L},{TCF23},{TMEM214},{TRIM54},{UCN},{ZNF512},{ZNF513}
+",gwas_causal_gene_gwas_catalog,TRIM54
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ARL2BP},{BBS2},{CCL17},{CCL22},{CETP},{CIAPIN1},{COQ9},{CPNE2},{CX3CL1},{DOK4},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUP93},{PLLP},{POLR2C},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {AP5B1},{BANF1},{C11orf68},{CATSPER1},{CCDC85B},{CD248},{CFL1},{CNIH2},{CST6},{CTSW},{DPF2},{DRAP1},{EFEMP2},{EHBP1L1},{EIF1AD},{FAM89B},{FIBP},{FOSL1},{FRMD8},{GAL3ST3},{KAT5},{KCNK7},{KLC2},{LTBP3},{MAP3K11},{MUS81},{OVOL1},{PACS1},{PCNX3},{RAB1B},{RELA},{RIN1},{RNASEH2C},{SART1},{SCYL1},{SF3B2},{SIPA1},{SLC25A45},{SNX32},{TIGD3},{TMEM151A},{TSGA10IP},{YIF1A},{ZNRD2}
+",gwas_causal_gene_gwas_catalog,SART1
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ADGRG5},{ARL2BP},{BBS2},{CCDC102A},{CCL17},{CCL22},{CETP},{CIAPIN1},{COQ9},{CPNE2},{CX3CL1},{DOK4},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUP93},{PLLP},{POLR2C},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ARL2BP},{BBS2},{CCL17},{CCL22},{CETP},{CIAPIN1},{COQ9},{CPNE2},{CX3CL1},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUP93},{OGFOD1},{PLLP},{POLR2C},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Neonatal circulating Complement Component 4 (C4) protein concentration
+Genes in locus: {ABHD16A},{AIF1},{APOM},{ATF6B},{ATP6V1G2},{ATP6V1G2-DDX39B},{BAG6},{C2},{C4A},{C4B},{C6orf47},{CFB},{CLIC1},{CSNK2B},{CYP21A2},{DDAH2},{DDX39B},{DXO},{EGFL8},{EHMT2},{ENSG00000244255},{ENSG00000263020},{ENSG00000285085},{ENSG00000289282},{ENSG00000291302},{FKBPL},{GPANK1},{HLA-B},{HLA-C},{HSPA1A},{HSPA1B},{HSPA1L},{LSM2},{LST1},{LTA},{LTB},{LY6G5B},{LY6G5C},{LY6G6C},{LY6G6D},{LY6G6F},{LY6G6F-LY6G6D},{MCCD1},{MICA},{MICB},{MPIG6B},{MSH5},{MSH5-SAPCD1},{NCR3},{NELFE},{NEU1},{NFKBIL1},{POU5F1},{PPT2},{PPT2-EGFL8},{PRRC2A},{PRRT1},{SAPCD1},{SKIC2},{SLC44A4},{STK19},{TCF19},{TNF},{TNXB},{VARS1},{VWA7},{ZBTB12}
+",gwas_causal_gene_gwas_catalog,ZBTB12
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Body mass index
+Genes in locus: {BBOX1},{BDNF},{CCDC34},{FIBIN},{LGR4},{LIN7C}
+",gwas_causal_gene_gwas_catalog,BDNF
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Parkinson's disease
+Genes in locus: {ATP5ME},{CPLX1},{CTBP1},{DGKQ},{FGFRL1},{GAK},{IDUA},{MAEA},{MYL5},{PCGF3},{PDE6B},{PIGG},{RNF212},{SLC26A1},{SLC49A3},{SPON2},{TMEM175},{TMEM271},{UVSSA},{ZNF141},{ZNF721}
+",gwas_causal_gene_gwas_catalog,TMEM175
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Metabolite levels (1-linoleoyl-GPG (18:2))
+Genes in locus: {ENSG00000257062},{ENSG00000285854},{GOLT1B},{GYS2},{IAPP},{LDHB},{PYROXD1},{RECQL},{SLCO1A2},{SLCO1B1},{SLCO1B3},{SLCO1B3-SLCO1B7},{SLCO1C1},{SPX}
+",gwas_causal_gene_gwas_catalog,SLCO1B1
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {APOA1},{APOA4},{APOA5},{APOC3},{BACE1},{BUD13},{CEP164},{PAFAH1B2},{PCSK7},{RNF214},{SIDT2},{SIK3},{TAGLN},{ZPR1}
+",gwas_causal_gene_gwas_catalog,APOA4
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Prostate cancer
+Genes in locus: {EPB41L5},{GLI2},{INHBB},{RALB},{TMEM185B}
+",gwas_causal_gene_gwas_catalog,INHBB
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {APOA1},{APOA4},{APOA5},{APOC3},{BUD13},{PAFAH1B2},{SIK3},{ZPR1}
+",gwas_causal_gene_gwas_catalog,APOA4
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {APOA1},{APOA4},{APOA5},{APOC3},{BACE1},{BUD13},{CEP164},{PAFAH1B2},{PCSK7},{RNF214},{SIDT2},{SIK3},{TAGLN},{ZPR1}
+",gwas_causal_gene_gwas_catalog,APOA4
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Primary open angle glaucoma (multi-trait analysis)
+Genes in locus: {CFAP52},{DHRS7C},{GAS7},{GLP2R},{GSG1L2},{MYH1},{MYH13},{MYH2},{MYH4},{MYH8},{RCVRN},{USP43}
+",gwas_causal_gene_gwas_catalog,MYH13
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ACTL9},{ADAMTS10},{ANGPTL4},{CD320},{CERS4},{ENSG00000167774},{FBN3},{HNRNPM},{KANK3},{MARCHF2},{MBD3L1},{MUC16},{MYO1F},{NDUFA7},{NFILZ},{OR1M1},{OR2Z1},{PRAM1},{RAB11B},{RPS28},{ZNF414},{ZNF558}
+",gwas_causal_gene_gwas_catalog,PRAM1
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ATP6V1B2},{CSGALNACT1},{INTS10},{LPL},{LZTS1},{SLC18A1}
+",gwas_causal_gene_gwas_catalog,LPL
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {ARL2BP},{BBS2},{CCL17},{CCL22},{CETP},{CIAPIN1},{COQ9},{CPNE2},{CX3CL1},{DOK4},{ENSG00000288725},{HERPUD1},{MT1A},{MT1B},{MT1E},{MT1F},{MT1G},{MT1H},{MT1M},{MT1X},{MT2A},{MT3},{MT4},{NLRC5},{NUP93},{PLLP},{POLR2C},{PSME3IP1},{RSPRY1},{SLC12A3}
+",gwas_causal_gene_gwas_catalog,CETP
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Neonatal circulating Complement Component 4 (C4) protein concentration
+Genes in locus: {AGER},{AGPAT1},{ATF6B},{BTNL2},{C2},{C4A},{C4B},{CFB},{CYP21A2},{DXO},{EGFL8},{EHMT2},{ENSG00000244255},{ENSG00000250264},{ENSG00000285085},{FKBPL},{GPSM3},{HLA-DOB},{HLA-DQA1},{HLA-DQA2},{HLA-DQB1},{HLA-DQB2},{HLA-DRA},{HLA-DRB1},{HLA-DRB5},{NELFE},{NEU1},{NOTCH4},{PBX2},{PPT2},{PPT2-EGFL8},{PRRT1},{PSMB8},{PSMB9},{RNF5},{SKIC2},{SLC44A4},{STK19},{TAP1},{TAP2},{TNXB},{TSBP1},{ZBTB12}
+",gwas_causal_gene_gwas_catalog,NOTCH4
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Mitochondrial DNA copy number (adjusted)
+Genes in locus: {CAPS},{CATSPERD},{DUS3L},{ENSG00000267157},{ENSG00000267314},{ENSG00000267740},{FUT3},{FUT5},{FUT6},{HSD11B1L},{KDM4B},{LONP1},{MICOS13},{NDUFA11},{NRTN},{PRR22},{PTPRS},{RANBP3},{RFX2},{RPL36},{SAFB},{SAFB2},{TINCR},{VMAC},{ZNRF4}
+",gwas_causal_gene_gwas_catalog,LONP1
+"Your task is to identify likely causal genes within a locus for a given GWAS phenotype. From the list, provide only the likely causal gene (matching one of the given genes). 
+Identify the causal gene.
+GWAS phenotype: Multi-trait sex score
+Genes in locus: {DHODH},{DHX38},{HP},{HPR},{PKD1L3},{PMFBP1},{TXNL4B},{ZFHX3}
+",gwas_causal_gene_gwas_catalog,PKD1L3
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,

@@ -1,0 +1,321 @@
+﻿Question,PHENOTYPE,GENE_LIST,Answer,Domain,Difficulty,Type,Task,Reference
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Multi-trait sex score,"APOC1, APOC2, APOC4, APOC4-APOC2, APOE, BCAM, BCL3, BLOC1S3, CBLC, CEACAM16, CEACAM19, CEACAM20, CKM, CLASRP, CLPTM1, ENSG00000267173, ERCC2, EXOC3L2, GEMIN7, IGSF23, KLC3, MARK4, NECTIN2, NKPD1, PPP1R13L, PPP1R37, PVR, RELB, TOMM40, TRAPPC6A, ZNF180, ZNF229, ZNF285, ZNF296",APOE,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Metabolite levels (glutarylcarnitine (C5); glutarylcarnitine (C5-DC); C5-DC carnitine; C5_DC_carnitine),"CPT2, CZIB, DMRTB1, ECHDC2, GLIS1, LRP8, MAGOH, PODN, SCP2, SLC1A7, ZYG11A, ZYG11B",CPT2,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>","Metabolite levels (cys-gly, oxidized)","ACSF3, ANKRD11, CDH15, CDK10, CHMP1A, CPNE7, DBNDD1, DEF8, DPEP1, ENSG00000198211, ENSG00000288715, FANCA, GAS8, MC1R, PRDM7, RPL13, SLC22A31, SPATA2L, SPATA33, SPG7, SPIRE2, TCF25, TUBB3, VPS9D1, ZNF276, ZNF778",DPEP1,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Metabolite levels (Fibrinopeptide A (7-16)),"EGF, ELOVL6, ENPEP, PITX2",ENPEP,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Mean platelet volume during the postpartum period,"AMN, BAG5, CDC42BPB, CKB, COA8, EIF5, ENSG00000256500, ENSG00000291313, EXOC3L4, LBHD2, MARK3, RCOR1, TNFAIP2, TRAF3, TRMT61A",EXOC3L4,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",COVID-19 hospitalization or osteoarthritis (MTAG),"ALS2CL, CCR1, CCR2, CCR3, CCR5, CCR9, CCRL2, CXCR6, ENSG00000206549, ENSG00000283877, FAM240A, FYCO1, LRRC2, LTF, LZTFL1, PRSS50, RTP3, SACM1L, SLC6A20, TDGF1, TMIE, XCR1",FYCO1,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Metabolite levels (cysteine-glutathione disulfide),"ADORA2A, CABIN1, ENSG00000286070, GGT1, GGT5, GUCD1, KIAA1671, LHFPL7, LRRC75B, PIWIL3, SGSM1, SNRPD3, SPECC1L, SPECC1L-ADORA2A, SUSD2, UPB1",GGT1,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Metabolite levels (imidazole lactate; imidazolelactate),"CCDC113, CNOT1, GINS3, GOT2, NDRG4, PRSS54, SETD6, SLC38A7",GOT2,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Immature reticulocyte forward scatter,"ABT1, BTN1A1, BTN2A1, BTN2A2, BTN3A1, BTN3A2, BTN3A3, CARMIL1, ENSG00000282988, ENSG00000290217, H1-1, H1-2, H1-3, H1-4, H1-6, H2AC1, H2AC4, H2AC6, H2AC7, H2AC8, H2BC1, H2BC10, H2BC3, H2BC4, H2BC5, H2BC6, H2BC7, H2BC8, H2BC9, H3C1, H3C2, H3C3, H3C4, H3C6, H3C7, H3C8, H4C1, H4C2, H4C3, H4C4, H4C5, H4C6, H4C7, H4C8, HFE, HMGN4, SCGN, SLC17A1, SLC17A2, SLC17A3, SLC17A4, TRIM38",HFE,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Prostate cancer,"EPB41L5, GLI2, INHBB, RALB, TMEM185B",INHBB,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Prostate-specific antigen levels,"ACP4, ASPDH, C19orf81, C19orf84, CD33, CLDND2, CLEC11A, CTU1, EMC10, ENSG00000261341, ENSG00000269403, ENSG00000269741, ETFB, GARIN5A, GPR32, IGLON5, JOSD2, KLK1, KLK10, KLK11, KLK12, KLK13, KLK14, KLK15, KLK2, KLK3, KLK4, KLK5, KLK6, KLK7, KLK8, KLK9, LIM2, LRRC4B, MYBPC2, NKG7, SHANK1, SIGLEC10, SIGLEC7, SIGLEC9, SIGLECL1, SYT3, VSIG10L",KLK3,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Mean platelet volume during the postpartum period,"ADPRHL1, ATP11A, ATP4B, CUL4A, DCUN1D2, F10, F7, GAS6, GRK1, GRTP1, LAMP1, MCF2L, PCID2, PROZ, TFDP1, TMCO3, TMEM255B",LAMP1,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Triglyceride to HDL cholesterol ratio,"CACNG6, CACNG7, CACNG8, CDC42EP5, CNOT3, KIR2DL1, KIR2DL3, KIR3DL3, LAIR1, LAIR2, LENG1, LENG8, LENG9, LILRA1, LILRA2, LILRA4, LILRA5, LILRA6, LILRB1, LILRB2, LILRB3, LILRB4, LILRB5, MBOAT7, MYADM, NDUFA3, NLRP12, OSCAR, PRKCG, PRPF31, RPS9, TARM1, TFPT, TMC4, TSEN34, TTYH1, VSTM1",LILRB5,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Multi-trait sex score,"BMP8A, BMP8B, HEYL, HPCAL4, MACF1, MFSD2A, MYCL, NT5C1A, OXCT2, PABPC4, PPIE, TRIT1",MACF1,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Metabolite levels (N-acetylcitrulline),"ACTG2, ALMS1, C2orf78, CCT7, DGUOK, DUSP11, EGR4, FBXO41, NAT8, NAT8B, NOTO, PRADC1, SMYD5, STAMBP, TET3, TPRKB",NAT8,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Eosinophil side fluorescence distribution width,"CACNG6, CACNG7, CACNG8, CNOT3, DPRX, LENG1, LILRA5, LILRA6, LILRB2, LILRB3, LILRB5, MBOAT7, MYADM, NDUFA3, NLRP12, OSCAR, PRKCG, PRPF31, RPS9, TARM1, TFPT, TMC4, TSEN34, VSTM1, ZNF331, ZNF525, ZNF761, ZNF765, ZNF813, ZNF845",NLRP12,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Metabolite levels (sarcosine (N-Methylglycine); sarcosine),"ABO, ADAMTS13, ADAMTSL2, BRD3, BRD3OS, CACFD1, DBH, FAM163B, MED22, MYMK, REXO4, RPL7A, SARDH, SLC2A6, STKLD1, SURF1, SURF2, SURF4, SURF6, VAV2, WDR5",SARDH,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Metabolite levels (N-acetyltryptophan),"CARMIL1, ENSG00000282988, ENSG00000290217, H1-1, H1-2, H1-3, H1-4, H1-6, H2AC1, H2AC4, H2AC6, H2AC7, H2AC8, H2BC1, H2BC10, H2BC3, H2BC4, H2BC5, H2BC6, H2BC7, H2BC8, H2BC9, H3C1, H3C2, H3C3, H3C4, H3C6, H3C7, H3C8, H4C1, H4C2, H4C3, H4C4, H4C5, H4C6, H4C7, H4C8, HFE, SCGN, SLC17A1, SLC17A2, SLC17A3, SLC17A4, TRIM38",SLC17A1,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Accessory basal nucleus volume,"BANK1, MANBA, NFKB1, SLC39A8, UBE2D3",SLC39A8,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS
+"You are an expert in genetics and GWAS analysis. Your task is to identify the most likely causal gene within a genomic locus for a given GWAS phenotype.
+Given Information:
+
+GWAS Phenotype: {{PHENOTYPE}}
+Genes in Locus: {{GENE_LIST}}
+
+Requirements:
+
+Analyze the biological relationship between the phenotype and each gene in the locus
+Consider known gene functions, pathways, and disease associations
+Select the gene most likely to be causally related to the phenotype
+Choose only from the genes provided in the list
+Provide only the gene symbol as your answer
+
+Output Format:
+<ANSWER>[gene symbol from the provided list]</ANSWER>",Multi-trait sum score,"ABHD1, AGBL5, ATRAID, C2orf16, CAD, CCDC121, CENPA, CGREF1, DNAJC5G, DPYSL5, EIF2B4, EMILIN1, FNDC4, GCKR, GPN1, GTF3C2, IFT172, KCNK3, KHK, KRTCAP3, MAPRE3, MPV17, NRBP1, OST4, PPM1G, PREB, PRR30, SLC30A3, SLC35F6, SLC5A6, SNX17, SUPT7L, TCF23, TMEM214, TRIM54, UCN, ZNF512, ZNF513",TRIM54,Genomics,Hard,Gene Identification,GWAS Causal Gene,GWAS_CATALOG_GWAS

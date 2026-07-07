@@ -35,40 +35,17 @@ VariantsAgent runs as a coordinated multi-agent workflow:
 
 Each skill lives under [`skills/`](skills/). Skills are grouped by the analytical scenario they serve.
 
-### Fine-mapping & meta-analysis
-- `gwas-finemapping`, `gwas-finemapping-susie`, `gwas-finemapping-abf`, `gwas-finemapping-cojo`,
-  `gwas-finemapping-finemap`, `gwas-finemapping-meta-susiex`, `gwas-finemapping-highconf-refalt`
-
-### Target gene prioritization (variant-to-gene)
-- `gwas-variant2gene`, `gwas-variant2gene-abc`, `gwas-variant2gene-qtl`, `gwas-variant2gene-magma`,
-  `gwas-variant2gene-enrichment`, `gwas-variant2gene-harmonize`, `gwas-variant2gene-integration`
-- `gwas-causal-gene`, `gwas-causal-gene-catalog`, `gwas-variant-mapped-gene`
-- `gwas-gene-trait`, `gwas-gene-trait-exclusive`, `gwas-phenotype-variant-identification-weighted`
-
-### Tissue & cell-context
-- `gwas-variant2cell`, `gwas-variant2cell-gsmap`, `gwas-variant2cell-magma`, `gwas-variant2cell-scavenge`
-
-### Sequence & protein function
-- `gwas-variant2sequence-function`, `-vep`, `-spliceai`, `-alphagenome`, `-alphafold`, `-protvar`,
-  `-mutpred2`, `-g2p`, `-clean`
-- `gwas-alphamissense`
-
-### Perturbation evidence
-- `gwas-variant2perturbation`, `-crispr`, `-vep`, `-snpeff`
-
-### Pathogenicity (ACMG / ClinGen-informed)
-- `gwas-variant2acmg-pathogenicity`
-
-### Drug & pharmacogenomic evidence
-- `gwas-variant2drug`, `-opentargets`, `-chembl`, `-drugbank`, `-drugcentral`, `-clinpgx`
-
-### Knowledge-graph reasoning
-- `gwas-variant2kg`
-
-### Orchestration
-- `gwas-full-pipeline` — end-to-end planning blueprint for the full post-GWAS pipeline.
-- `gwas-pipeline-team` — runs the complete pipeline end-to-end with a multi-agent team.
-- `gwas-module-reflection` — module-level self-reflection / critique.
+| Scenario | Skills |
+|----------|--------|
+| Fine-mapping & meta-analysis | `gwas-finemapping`, `gwas-finemapping-susie`, `gwas-finemapping-abf`, `gwas-finemapping-cojo`, `gwas-finemapping-finemap`, `gwas-finemapping-meta-susiex`, `gwas-finemapping-highconf-refalt` |
+| Target gene prioritization (variant-to-gene) | `gwas-variant2gene`, `gwas-variant2gene-abc`, `gwas-variant2gene-qtl`, `gwas-variant2gene-magma`, `gwas-variant2gene-enrichment`, `gwas-variant2gene-harmonize`, `gwas-variant2gene-integration`, `gwas-causal-gene`, `gwas-causal-gene-catalog`, `gwas-variant-mapped-gene`, `gwas-gene-trait`, `gwas-gene-trait-exclusive`, `gwas-phenotype-variant-identification-weighted` |
+| Tissue & cell-context | `gwas-variant2cell`, `gwas-variant2cell-gsmap`, `gwas-variant2cell-magma`, `gwas-variant2cell-scavenge` |
+| Sequence & protein function | `gwas-variant2sequence-function`, `gwas-variant2sequence-function-vep`, `gwas-variant2sequence-function-spliceai`, `gwas-variant2sequence-function-alphagenome`, `gwas-variant2sequence-function-alphafold`, `gwas-variant2sequence-function-protvar`, `gwas-variant2sequence-function-mutpred2`, `gwas-variant2sequence-function-g2p`, `gwas-variant2sequence-function-clean`, `gwas-alphamissense` |
+| Perturbation evidence | `gwas-variant2perturbation`, `gwas-variant2perturbation-crispr`, `gwas-variant2perturbation-vep`, `gwas-variant2perturbation-snpeff` |
+| Pathogenicity (ACMG / ClinGen-informed) | `gwas-variant2acmg-pathogenicity` |
+| Drug & pharmacogenomic evidence | `gwas-variant2drug`, `gwas-variant2drug-opentargets`, `gwas-variant2drug-chembl`, `gwas-variant2drug-drugbank`, `gwas-variant2drug-drugcentral`, `gwas-variant2drug-clinpgx` |
+| Knowledge-graph reasoning | `gwas-variant2kg` |
+| Orchestration & scaffolding | `gwas-full-pipeline` (end-to-end planning blueprint), `gwas-pipeline-team` (runs the full pipeline with a multi-agent team), `gwas-module-reflection` (module-level self-reflection / critique), `skill-creator` (scaffold new skills) |
 
 Tools invoked across scenarios include SuSiE, FINEMAP, COLOC-ABF, MAGMA, ABC, SCAVENGE, gsMAP,
 AlphaGenome, AlphaMissense, VEP, SpliceAI, ProtVar, MaveDB, Open Targets, ClinPGx, PharmCAT,
@@ -83,7 +60,6 @@ skills/                 # the VariantsAgent skill library (one directory per ski
     scripts/ or *.py    # analysis scripts the skill executes
     references/         # optional supporting docs
 docker/                 # containerized environment (Dockerfile + conda/pip specs + CLEAN package)
-pgi ms - Google 文档.pdf # manuscript draft describing PGI
 ```
 
 Each skill is self-describing: read its `SKILL.md` for the exact trigger conditions, inputs, step
@@ -214,7 +190,7 @@ VariantsAgent was evaluated on 313 questions spanning three categories — **gen
 **gene-phenotype** and **variant-phenotype** — drawn from published genetic-reasoning datasets
 (GenomeArena, Biomni, SDE), scored via an LLM-as-a-judge protocol with majority voting over 5 runs.
 All values below are accuracy (%); **N** is the number of questions; the best value in each row is
-**bold**.
+**bold**. The raw question sets are published under [`benchmarks/`](benchmarks/) as CSV files.
 
 ### Skills generalize across backbone models and agent harnesses
 
@@ -229,43 +205,89 @@ models, and compared against each model with no skills (**plain LLM**). Model co
 | CS | claude-sonnet-4-6 | 2026-02-18 |
 | GPT | gpt-5.4 | 2026-03-05 |
 
-*Column groups: **OC** = OpenCode + skills, **CC** = Claude Code + skills, **LLM** = model alone (no skills).*
+**Average accuracy by configuration** (mean over all 313 questions; best model per column in **bold**):
 
-| Category | Dataset | N | OC·DS | OC·QW | OC·KM | OC·CS | OC·GPT | CC·DS | CC·QW | CC·KM | CC·CS | CC·GPT | LLM·DS | LLM·QW | LLM·KM | LLM·CS | LLM·GPT |
-|----------|---------|---|-------|-------|-------|-------|--------|-------|-------|-------|-------|--------|--------|--------|--------|--------|---------|
-| gene-variant | GWAS+AM-set1 (GenomeArena) | 20 | **90** | **90** | **90** | **90** | **90** | **90** | **90** | **90** | **90** | **90** | 55 | 45 | 60 | 55 | 45 |
-| | GWAS-set3 (GenomeArena) | 20 | **100** | **100** | **100** | **100** | **100** | **100** | **100** | **100** | **100** | **100** | 45 | 35 | 25 | 35 | 25 |
-| gene-phenotype | GWAS+AM-set2 (GenomeArena) | 20 | 90 | 90 | 90 | 90 | 90 | 85 | 90 | 90 | 90 | **95** | 65 | 65 | 60 | 55 | 70 |
-| | GWAS-set1 (GenomeArena) | 20 | **100** | 90 | **100** | 90 | 95 | 90 | 90 | 95 | 85 | 80 | 50 | 55 | 45 | 60 | 65 |
-| | GWAS-set2 (GenomeArena) | 20 | 55 | 55 | 55 | 50 | 55 | **60** | 45 | 45 | **60** | **60** | **60** | 45 | 45 | 45 | 55 |
-| | Causal-gene-1 (Biomni) | 50 | 64 | 68 | 74 | 66 | 64 | **76** | 66 | 64 | 66 | 66 | 56 | 56 | 54 | 58 | 62 |
-| | Causal-gene-2 (Biomni) | 50 | 80 | 78 | 78 | 70 | 70 | 82 | 82 | **84** | 72 | 72 | 78 | 76 | 74 | 82 | 80 |
-| | Causal-gene-3 (Biomni) | 50 | 86 | 88 | 88 | 88 | 88 | 86 | 88 | 88 | **90** | 84 | 64 | 72 | 68 | 72 | 74 |
-| | Causal-gene-1 (SDE) | 20 | 70 | 75 | **80** | 70 | 70 | 70 | 70 | 70 | 70 | 65 | 45 | 50 | 60 | 55 | 60 |
-| variant-phenotype | Variant Prioritization | 43 | 74.4 | 76.7 | 74.4 | 76.7 | 79.1 | 79.1 | **86.0** | 81.4 | 79.1 | 81.4 | 20.9 | 14.0 | 20.9 | 18.6 | 18.6 |
-| **Average** | | 313 | 79.2 | 80.8 | **81.8** | 78.3 | 78.0 | **81.8** | 80.2 | 80.8 | 79.9 | 78.9 | 54.0 | 55.9 | 51.4 | 55.9 | 57.5 |
+| Configuration | DS | QW | KM | CS | GPT |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| OpenCode + skills | 79.2 | **80.8** | **81.8** | 78.3 | 78.0 |
+| Claude Code + skills | **81.8** | 80.2 | 80.8 | **79.9** | **78.9** |
+| Plain LLM (no skills) | 54.0 | 55.9 | 51.4 | 55.9 | 57.5 |
 
 Skills lift every backbone by ~24-27 accuracy points on average over the plain LLM (e.g. deepseek-v4-pro:
 54.0 → 81.8 with Claude Code + skills), and the effect holds across both harnesses.
 
+<details>
+<summary><b>Per-dataset accuracy (all datasets × models)</b></summary>
+
+**OpenCode + skills**
+
+| Dataset | N | DS | QW | KM | CS | GPT |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| GWAS+AM-set1 (GenomeArena) | 20 | 90 | 90 | 90 | 90 | 90 |
+| GWAS-set3 (GenomeArena) | 20 | 100 | 100 | 100 | 100 | 100 |
+| GWAS+AM-set2 (GenomeArena) | 20 | 90 | 90 | 90 | 90 | 90 |
+| GWAS-set1 (GenomeArena) | 20 | 100 | 90 | 100 | 90 | 95 |
+| GWAS-set2 (GenomeArena) | 20 | 55 | 55 | 55 | 50 | 55 |
+| Causal-gene-1 (Biomni) | 50 | 64 | 68 | 74 | 66 | 64 |
+| Causal-gene-2 (Biomni) | 50 | 80 | 78 | 78 | 70 | 70 |
+| Causal-gene-3 (Biomni) | 50 | 86 | 88 | 88 | 88 | 88 |
+| Causal-gene-1 (SDE) | 20 | 70 | 75 | 80 | 70 | 70 |
+| Variant Prioritization | 43 | 74.4 | 76.7 | 74.4 | 76.7 | 79.1 |
+| **Average** | 313 | 79.2 | 80.8 | 81.8 | 78.3 | 78.0 |
+
+**Claude Code + skills**
+
+| Dataset | N | DS | QW | KM | CS | GPT |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| GWAS+AM-set1 (GenomeArena) | 20 | 90 | 90 | 90 | 90 | 90 |
+| GWAS-set3 (GenomeArena) | 20 | 100 | 100 | 100 | 100 | 100 |
+| GWAS+AM-set2 (GenomeArena) | 20 | 85 | 90 | 90 | 90 | 95 |
+| GWAS-set1 (GenomeArena) | 20 | 90 | 90 | 95 | 85 | 80 |
+| GWAS-set2 (GenomeArena) | 20 | 60 | 45 | 45 | 60 | 60 |
+| Causal-gene-1 (Biomni) | 50 | 76 | 66 | 64 | 66 | 66 |
+| Causal-gene-2 (Biomni) | 50 | 82 | 82 | 84 | 72 | 72 |
+| Causal-gene-3 (Biomni) | 50 | 86 | 88 | 88 | 90 | 84 |
+| Causal-gene-1 (SDE) | 20 | 70 | 70 | 70 | 70 | 65 |
+| Variant Prioritization | 43 | 79.1 | 86.0 | 81.4 | 79.1 | 81.4 |
+| **Average** | 313 | 81.8 | 80.2 | 80.8 | 79.9 | 78.9 |
+
+**Plain LLM (no skills)**
+
+| Dataset | N | DS | QW | KM | CS | GPT |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| GWAS+AM-set1 (GenomeArena) | 20 | 55 | 45 | 60 | 55 | 45 |
+| GWAS-set3 (GenomeArena) | 20 | 45 | 35 | 25 | 35 | 25 |
+| GWAS+AM-set2 (GenomeArena) | 20 | 65 | 65 | 60 | 55 | 70 |
+| GWAS-set1 (GenomeArena) | 20 | 50 | 55 | 45 | 60 | 65 |
+| GWAS-set2 (GenomeArena) | 20 | 60 | 45 | 45 | 45 | 55 |
+| Causal-gene-1 (Biomni) | 50 | 56 | 56 | 54 | 58 | 62 |
+| Causal-gene-2 (Biomni) | 50 | 78 | 76 | 74 | 82 | 80 |
+| Causal-gene-3 (Biomni) | 50 | 64 | 72 | 68 | 72 | 74 |
+| Causal-gene-1 (SDE) | 20 | 45 | 50 | 60 | 55 | 60 |
+| Variant Prioritization | 43 | 20.9 | 14.0 | 20.9 | 18.6 | 18.6 |
+| **Average** | 313 | 54.0 | 55.9 | 51.4 | 55.9 | 57.5 |
+
+</details>
+
 ### Framework ablation (deepseek-v4-pro backbone)
 
 Fixing the backbone to deepseek-v4-pro, we ablate the skills within each harness and compare against
-the Biomni agent baseline.
+the Biomni agent baseline. **OC** = OpenCode, **CC** = Claude Code, **LLM** = deepseek-v4-pro alone;
+best per row in **bold**.
 
-| Category | Dataset | N | OpenCode + skills | OpenCode | Claude Code + skills | Claude Code | DeepSeek (plain) | Biomni |
-|----------|---------|---|-------------------|----------|----------------------|-------------|------------------|--------|
-| gene-variant | GWAS+AM-set1 (GenomeArena) | 20 | **90** | 85 | **90** | 80 | 55 | **90** |
-| | GWAS-set3 (GenomeArena) | 20 | **100** | 90 | **100** | **100** | 45 | **100** |
-| gene-phenotype | GWAS+AM-set2 (GenomeArena) | 20 | **90** | **90** | 85 | 75 | 65 | 75 |
-| | GWAS-set1 (GenomeArena) | 20 | **100** | **100** | 90 | 95 | 50 | **100** |
-| | GWAS-set2 (GenomeArena) | 20 | 55 | 50 | 60 | 65 | 45 | **85** |
-| | Causal-gene-1 (Biomni) | 50 | 64 | 66 | **76** | 62 | 56 | 26 |
-| | Causal-gene-2 (Biomni) | 50 | 80 | 78 | **82** | 78 | 78 | 40 |
-| | Causal-gene-3 (Biomni) | 50 | 86 | 80 | **88** | 68 | 64 | 26 |
-| | Causal-gene-1 (SDE) | 20 | **70** | 65 | **70** | 65 | 45 | 15 |
-| variant-phenotype | Variant Prioritization | 43 | 74.4 | **81.4** | 79.1 | 79.1 | 20.9 | **81.4** |
-| **Average** | | 313 | 79.2 | 77.3 | **81.8** | 75.1 | 54.0 | 55.6 |
+| Dataset | N | OC + skills | OC | CC + skills | CC | LLM | Biomni |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| GWAS+AM-set1 (GenomeArena) | 20 | **90** | 85 | **90** | 80 | 55 | **90** |
+| GWAS-set3 (GenomeArena) | 20 | **100** | 90 | **100** | **100** | 45 | **100** |
+| GWAS+AM-set2 (GenomeArena) | 20 | **90** | **90** | 85 | 75 | 65 | 75 |
+| GWAS-set1 (GenomeArena) | 20 | **100** | **100** | 90 | 95 | 50 | **100** |
+| GWAS-set2 (GenomeArena) | 20 | 55 | 50 | 60 | 65 | 45 | **85** |
+| Causal-gene-1 (Biomni) | 50 | 64 | 66 | **76** | 62 | 56 | 26 |
+| Causal-gene-2 (Biomni) | 50 | 80 | 78 | **82** | 78 | 78 | 40 |
+| Causal-gene-3 (Biomni) | 50 | 86 | 80 | **88** | 68 | 64 | 26 |
+| Causal-gene-1 (SDE) | 20 | **70** | 65 | **70** | 65 | 45 | 15 |
+| Variant Prioritization | 43 | 74.4 | **81.4** | 79.1 | 79.1 | 20.9 | **81.4** |
+| **Average** | 313 | 79.2 | 77.3 | **81.8** | 75.1 | 54.0 | 55.6 |
 
 Across capability axes — workflow planning, statistical genetics, variant-to-gene mapping, mechanism
 interpretation, evidence-chain reasoning and reproducibility — VariantsAgent (skills + agent harness)

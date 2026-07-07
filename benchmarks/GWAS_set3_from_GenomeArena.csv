@@ -1,0 +1,21 @@
+question,answer,tool,snp,chr_id,correct_gene
+Which gene is variant rs8032760 mapped to according to the GWAS catalog? [A] MCHR1 [B] LINC02895 [C] SPAM1 [D] SEMA6D,D,GWAS,rs8032760,15,SEMA6D
+Which gene is variant rs4645742 mapped to according to the GWAS catalog? [A] IGLV10-54 [B] OR12D2 [C] HASPIN [D] MCM5,D,GWAS,rs4645742,22,MCM5
+Which gene is variant rs11644125 mapped to according to the GWAS catalog? [A] SLC12A4 [B] OR51B6 [C] NLRC5 [D] ILRUN,C,GWAS,rs11644125,16,NLRC5
+Which gene is variant rs721992 mapped to according to the GWAS catalog? [A] CCDC6 [B] ZNF425 [C] HTR3D [D] RPL17P50,A,GWAS,rs721992,10,CCDC6
+Which gene is variant rs74692308 mapped to according to the GWAS catalog? [A] CWH43 [B] LINC01258 [C] PCIF1 [D] GFER,B,GWAS,rs74692308,4,LINC01258
+Which gene is variant rs550829245 mapped to according to the GWAS catalog? [A] FAM135B [B] GCGR [C] PLEKHB1 [D] OPCML,D,GWAS,rs550829245,11,OPCML
+Which gene is variant rs40129 mapped to according to the GWAS catalog? [A] RAB1A [B] PRSS33 [C] LINC02177 [D] ACVR2B-AS1,C,GWAS,rs40129,16,LINC02177
+Which gene is variant rs11174812 mapped to according to the GWAS catalog? [A] AQP5-AS1 [B] SLC2A13 [C] PRP4K [D] PCSK7,B,GWAS,rs11174812,12,SLC2A13
+Which gene is variant rs1656376 mapped to according to the GWAS catalog? [A] AREL1 [B] LINC01498 [C] ITPR1 [D] MLF1-DT,D,GWAS,rs1656376,3,MLF1-DT
+Which gene is variant rs11640600 mapped to according to the GWAS catalog? [A] FAM86C1P [B] SPNS2 [C] KCTD13 [D] CDH13,D,GWAS,rs11640600,16,CDH13
+Which gene is variant rs2182400 mapped to according to the GWAS catalog? [A] SENP3-EIF4A1 [B] MAT1A [C] SVIL-AS1 [D] TTN,C,GWAS,rs2182400,10,SVIL-AS1
+Which gene is variant rs9386797 mapped to according to the GWAS catalog? [A] SNAI3 [B] MYLK4 [C] DNM1P34 [D] CCDC162P,D,GWAS,rs9386797,6.0,CCDC162P
+Which gene is variant rs4939513 mapped to according to the GWAS catalog? [A] DDB1 [B] MED30 [C] SEMA6B [D] MUS81,A,GWAS,rs4939513,11,DDB1
+Which gene is variant rs5750911 mapped to according to the GWAS catalog? [A] LINC00575 [B] COX7A2L [C] TNRC6B [D] RANGAP1,C,GWAS,rs5750911,22,TNRC6B
+Which gene is variant rs17606253 mapped to according to the GWAS catalog? [A] SNORD117 [B] ZNF708 [C] OR5B3 [D] MFSD4B-DT,D,GWAS,rs17606253,6,MFSD4B-DT
+Which gene is variant rs2243951 mapped to according to the GWAS catalog? [A] CELF2-DT [B] MTND4P22 [C] LINC01539 [D] CHST15,A,GWAS,rs2243951,10,CELF2-DT
+Which gene is variant rs4653889 mapped to according to the GWAS catalog? [A] RTCA-AS1 [B] WNT9A [C] SETD4 [D] CENPS,B,GWAS,rs4653889,1,WNT9A
+Which gene is variant rs113661590 mapped to according to the GWAS catalog? [A] PCAT1 [B] WDR97 [C] ZNF517 [D] RAB5C,A,GWAS,rs113661590,8,PCAT1
+Which gene is variant rs1250550 mapped to according to the GWAS catalog? [A] SLC4A1AP [B] KCNJ6-AS1 [C] ZMIZ1 [D] LINC02656,C,GWAS,rs1250550,10,ZMIZ1
+Which gene is variant rs17110938 mapped to according to the GWAS catalog? [A] HNRNPKP5 [B] RPL28P1 [C] CTTNBP2NL [D] MROH7-TTC4,D,GWAS,rs17110938,1,MROH7-TTC4
