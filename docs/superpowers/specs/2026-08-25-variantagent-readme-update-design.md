@@ -130,9 +130,8 @@ extraction given in parentheses for traceability during writing).
 - Everything else (Dockerfile build args, cc-switch commands, example
   pipeline prompt) stays as-is — not sourced from the manuscript, still
   accurate to the repo's actual `docker/` contents.
-- Status line at the end: replace "Research prototype accompanying the PGI
-  manuscript" framing if needed to stay consistent with Part 1, but no
-  substantive change needed here.
+- Status line at the end: keep "Research prototype accompanying the PGI
+  manuscript" as-is — it is already consistent with Part 1's framing.
 
 ## B. Figure replacement
 
