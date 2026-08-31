@@ -60,30 +60,27 @@ linking and path construction.
 *Numbers below are reported in the accompanying manuscript; see [Code and data
 availability](#code-and-data-availability).*
 
-**Answer-level accuracy.** On 313 questions drawn from five published genetic-reasoning benchmarks
-(GenomeArena, Biomni, SDE), VariantAgent answered 270 correctly (86.3%), compared with 246 (78.6%)
-for OpenCode, 241 (77.0%) for Tool Universe and 235 (75.1%) for Claude Code; all other tested
-systems scored 51.4-57.5%. VariantAgent exceeded the strongest competitor by 7.7 percentage points
-(95% CI 3.8-11.8, 10,000 paired bootstrap resamples) and ranked first or joint first on every
-constituent benchmark. The raw question sets are published under [`benchmarks/`](benchmarks/).
+**Answer-level accuracy.** VariantAgent was evaluated on 313 questions drawn from five published
+genetic-reasoning benchmarks (GenomeArena, Biomni, SDE) against OpenCode, Tool Universe, Claude
+Code and other tested systems, and ranked first or joint first on every constituent benchmark. The
+raw question sets are published under [`benchmarks/`](benchmarks/).
+
+**Recapitulating published findings, and going beyond them.** In matched reanalyses of 34
+published GWAS spanning diverse diseases and quantitative traits, VariantAgent recovered the large
+majority of directly comparable source-study findings. Uniform reanalysis also substantially
+expanded downstream evidence relative to the source studies — across independent signals,
+prioritized variants, prioritized genes, tissue or cellular contexts, mechanistic hypotheses,
+perturbation-evidence records and pharmacological links — including regulatory relationships at
+established risk loci not previously reported in the source studies.
 
 **Analytical validity, not just answer accuracy.** On 26 study-specific questions requiring
-analysis of supplied GWAS summary statistics, VariantAgent answered 65.4% correctly (open-answer
-protocol), versus 53.9% for Biomni and 46.2% for Claude Code. Auditing whether the correct answer
-was also reached through a valid analytical trace (target-method execution, critical
-harmonization, evidence-chain completion, fallback recovery) gave a **process-validated accuracy**
-of 61.5% for VariantAgent, versus 30.8% for Biomni and 7.7% for Claude Code — the largest
-separation between systems came from maintaining validity across the complete analytical chain,
-not from any single operation. Among answers scored correct, 94.0% of VariantAgent's were
-trace-valid, versus 57.1% (Biomni) and 16.7% (Claude Code).
-
-**Recapitulating published findings.** In matched reanalyses of 34 published GWAS spanning diverse
-diseases and quantitative traits, VariantAgent recovered a mean of 82.1% (95% CI 75.3-88.9%) of
-directly comparable source-study findings. Uniform reanalysis substantially expanded downstream
-evidence relative to the source studies: mean per-study evidence counts increased 3.4-fold for
-independent signals, 4.7-fold for prioritized variants, 57.9-fold for prioritized genes, 6.2-fold
-for tissue or cellular contexts, 34.7-fold for mechanistic hypotheses, 79.6-fold for
-perturbation-evidence records, and 1.3-fold for pharmacological links.
+analysis of supplied GWAS summary statistics, VariantAgent outperformed Biomni and Claude Code
+under the open-answer protocol. Auditing whether the correct answer was also reached through a
+valid analytical trace (target-method execution, critical harmonization, evidence-chain
+completion, fallback recovery) showed VariantAgent maintaining substantially higher
+**process-validated accuracy** than the other systems — the largest separation between systems
+came from maintaining validity across the complete analytical chain, not from any single
+operation.
 
 **Scale.** Applied to 1,041 GWAS, VariantAgent generated 530,949 standardized variant-centred
 evidence units together with trait-level evidence-synthesis reports, indexed by PGI across 370
@@ -161,7 +158,7 @@ docker run -d \
   --shm-size=4g \
   -v /path/to/your/workspace:/workspace \
   -v /path/to/your/skills:/root/.claude/skills \
-  --name gwas post_gwas:v2
+  --name gwas post_gwas:v1
 
 docker exec -it gwas /bin/bash
 ```
