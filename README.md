@@ -60,7 +60,7 @@ linking and path construction.
 *Numbers below are reported in the accompanying manuscript; see [Code and data
 availability](#code-and-data-availability).*
 
-**Answer-level accuracy.** VariantAgent was evaluated on 313 questions drawn from five published
+**Answer-level accuracy.** VariantAgent was evaluated on 313 questions drawn from three published
 genetic-reasoning benchmarks (GenomeArena, Biomni, SDE) against OpenCode, Tool Universe, Claude
 Code and other tested systems, and ranked first or joint first on every constituent benchmark. The
 raw question sets are published under [`benchmarks/`](benchmarks/).
