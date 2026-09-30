@@ -1,0 +1,1308 @@
+{
+  "variant": {
+    "rsid": "rs4876611",
+    "chrom": "8",
+    "pos_hg38": 115659621,
+    "ref": "A",
+    "alt": "G",
+    "variant_class": "non-coding",
+    "trait": "TC",
+    "source_GWAS": "GCST90018754",
+    "most_severe_consequence": "intron_variant"
+  },
+  "evidence": {
+    "GWAS": {
+      "_display": "GWAS — Summary Statistics",
+      "meta": {
+        "module": "GWAS",
+        "scenario": "gwas-summary",
+        "tool": "GWAS",
+        "result_type": "single_variant_association"
+      },
+      "provenance": {
+        "input_file": "summarystats_clean.tsv",
+        "source_GWAS": "GCST90018754",
+        "study": "Sakaue S. et al. 2021 (Nature Genetics)",
+        "population": "East Asian",
+        "effective_n": 135808,
+        "genome_build": "GRCh38/hg38"
+      },
+      "data": {
+        "effect_allele": "G",
+        "non_effect_allele": "A",
+        "effect_allele_frequency": 0.732243,
+        "beta": 0.0252772,
+        "se": 0.00402806,
+        "p_value": 3.5e-10,
+        "is_genome_wide_significant": true,
+        "sample_size": 135808,
+        "minor_allele_frequency": 0.267757,
+        "maf_category": "common",
+        "z_score": 6.275279
+      }
+    },
+    "MAF": {
+      "_display": "MAF — Population Allele Frequency",
+      "meta": {
+        "module": "MAF",
+        "scenario": "population-af",
+        "tool": "GWAS-summary-stats",
+        "result_type": "population_allele_frequency"
+      },
+      "provenance": {
+        "input_file": "summarystats_clean.tsv",
+        "source": "GCST90018754",
+        "population": "East Asian",
+        "note": "MAF from GWAS summary statistics; gnomAD lookup not performed"
+      },
+      "data": {
+        "gwas_maf": 0.267757,
+        "maf_category": "common"
+      }
+    },
+    "M1": {
+      "_display": "M1 — Fine-mapping",
+      "ABF": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping",
+          "tool": "coloc-ABF",
+          "result_type": "posterior_probability"
+        },
+        "provenance": {
+          "input_file": "ABF_finemap_results.txt",
+          "tool_version": "coloc 5.2.3",
+          "parameters": {
+            "prior_sd": 0.2
+          }
+        },
+        "data": {
+          "posterior_probability": 0.1325786781,
+          "in_95_credible_set": true
+        },
+        "_display": "M1.2 — ABF"
+      },
+      "SuSiE": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping",
+          "tool": "SuSiE-RSS",
+          "result_type": "credible_set_membership"
+        },
+        "provenance": {
+          "input_file": "SuSiE_finemap_results_hg19.txt",
+          "tool_version": "susieR 0.12.35",
+          "parameters": {
+            "L": 10,
+            "coverage": 0.95
+          }
+        },
+        "data": {
+          "pip": 1.0,
+          "in_credible_set": true
+        },
+        "_display": "M1.3 — SuSiE"
+      },
+      "FINEMAP": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping",
+          "tool": "FINEMAP",
+          "result_type": "posterior_inclusion_probability"
+        },
+        "provenance": {
+          "input_file": "FINEMAP_all_loci.sorted_by_pip.tsv",
+          "tool_version": "FINEMAP 1.4.1",
+          "parameters": {
+            "n_causal": 5
+          }
+        },
+        "data": {
+          "pip": 0.0
+        },
+        "_display": "M1.4 — FINEMAP"
+      },
+      "Consensus": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping-integration",
+          "tool": "compare_methods.R",
+          "result_type": "cross_tool_consensus"
+        },
+        "provenance": {
+          "input_file": "finemap_comparison_hg19.txt",
+          "parameters": {
+            "highconf_threshold": 2
+          }
+        },
+        "data": {
+          "support_count": 2,
+          "highconf": true,
+          "abf_support": true,
+          "susie_support": true,
+          "finemap_support": false,
+          "concordant": true
+        },
+        "_display": "M1.5 — Consensus"
+      }
+    },
+    "M4": {
+      "_display": "M4 — Variant-to-Sequence/Protein Function",
+      "SpliceAI": [
+        {
+          "meta": {
+            "module": "M4",
+            "scenario": "variant2splice",
+            "tool": "SpliceAI",
+            "result_type": "splice_delta_score"
+          },
+          "provenance": {
+            "input_file": "spliceai_scores.csv",
+            "spliceai_version": "1.3.1",
+            "max_distance": 500
+          },
+          "data": {
+            "ds_ag": 0.0,
+            "ds_al": 0.0,
+            "ds_dg": 0.0,
+            "ds_dl": 0.0,
+            "ds_max": 0,
+            "gene_symbol": "TRPS1",
+            "gene_id": "ENSG00000104447.14_19",
+            "transcript_id": "ENST00000519674.1_5"
+          },
+          "_display": "M4.2 — SpliceAI"
+        }
+      ]
+    },
+    "M5": {
+      "_display": "M5 — Variant-to-Perturbation",
+      "SnpEff": {
+        "meta": {
+          "module": "M5",
+          "scenario": "variant2perturbation-annotation",
+          "tool": "SnpEff",
+          "result_type": "functional_annotation"
+        },
+        "provenance": {
+          "input_file": "snpeff_results.tsv",
+          "tool_version": "SnpEff 5.2",
+          "genome_build": "GRCh38/hg38"
+        },
+        "data": {
+          "effect": "intron_variant",
+          "impact": "MODIFIER",
+          "gene_symbol": "TRPS1",
+          "hgvs_c": "c.-122+8924T>C"
+        },
+        "_display": "M5.1 — SnpEff"
+      },
+      "MAVE_MPRA": {
+        "meta": {
+          "module": "M5",
+          "scenario": "variant2perturbation-experimental",
+          "tool": "VEP",
+          "result_type": "functional_annotation"
+        },
+        "provenance": {
+          "input_file": "parsed.tsv",
+          "vep_version": "VEP 115.2"
+        },
+        "data": {
+          "vep_consequence": "intron_variant",
+          "gene_symbol": "TRPS1",
+          "vep_impact": "MODIFIER",
+          "has_any_data": true
+        },
+        "_display": "M5.2 — MAVE/MPRA"
+      }
+    },
+    "M6": {
+      "_display": "M6 — Variant-to-ACMG Pathogenicity",
+      "Noncoding_ACMG": {
+        "meta": {
+          "module": "M6",
+          "scenario": "variant2acmg-noncoding",
+          "tool": "Ellingford-2022",
+          "result_type": "noncoding_pathogenicity_classification"
+        },
+        "provenance": {
+          "input_file": "acmg_classifications.tsv",
+          "ellingford_framework": "2022",
+          "spliceai_version": "1.3.1"
+        },
+        "data": {
+          "classification": "NCS2_Regulatory",
+          "evidence_pathogenic": [
+            "NCS2+NCP1"
+          ],
+          "n_criteria_met": 1,
+          "gene_snpeff": "TRPS1",
+          "pip": 0.132578678111623,
+          "highconf": true
+        },
+        "_display": "M6.1 — Non-coding ACMG"
+      }
+    },
+    "KG": {
+      "_display": "KG — Knowledge Graph",
+      "Variant_Gene_Association": [
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-variant-gene-association",
+            "tool": "Neo4j-Cypher",
+            "result_type": "variant_gene_association"
+          },
+          "provenance": {
+            "input_file": "m2a_direct.json"
+          },
+          "data": {
+            "gene_symbol": "TRPS1",
+            "variant_rsid": "rs4876611",
+            "vg_relationship_type": "association",
+            "lof_oeUpper": 0.114
+          },
+          "_display": "KG.1 — Variant-Gene Association"
+        }
+      ],
+      "Drug_Path": [
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Bicine",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.9924712924444653,
+            "final_path_score": 0.9845936073451105,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Aminocaproic acid",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.9912778455445291,
+            "final_path_score": 0.9834096333628618,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "FADS1",
+            "drug_name": "Omega-6 fatty acids",
+            "vg_similarity": 0.981271379910469,
+            "gd_similarity": 0.9941370838018697,
+            "final_path_score": 0.9755182680424302,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "ALDH1A2",
+            "drug_name": "NADH",
+            "vg_similarity": 0.981036236359836,
+            "gd_similarity": 0.9931338016271178,
+            "final_path_score": 0.9743002469500036,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "FADS1",
+            "drug_name": "alpha-Linolenic acid",
+            "vg_similarity": 0.981271379910469,
+            "gd_similarity": 0.9918346869243202,
+            "final_path_score": 0.9732589918812956,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PCSK9",
+            "drug_name": "Inclisiran",
+            "vg_similarity": 0.9844142004904114,
+            "gd_similarity": 0.9849366565810351,
+            "final_path_score": 0.9695856313219186,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "LPL",
+            "drug_name": "Tyloxapol",
+            "vg_similarity": 0.9783778707068819,
+            "gd_similarity": 0.9905680047866429,
+            "final_path_score": 0.96914981531352,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "LPA",
+            "drug_name": "Aminocaproic acid",
+            "vg_similarity": 0.9863550198832344,
+            "gd_similarity": 0.9781360841795691,
+            "final_path_score": 0.9647894367594478,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "FADS1",
+            "drug_name": "Vayarin",
+            "vg_similarity": 0.981271379910469,
+            "gd_similarity": 0.9814981078309274,
+            "final_path_score": 0.9631160026507684,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Copper",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.9614101563003575,
+            "final_path_score": 0.9537790172232748,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PCSK9",
+            "drug_name": "Evolocumab",
+            "vg_similarity": 0.9844142004904114,
+            "gd_similarity": 0.9618826615636717,
+            "final_path_score": 0.9468909512487909,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "CETP",
+            "drug_name": "Torcetrapib",
+            "vg_similarity": 0.9562925464567184,
+            "gd_similarity": 0.9856664995727054,
+            "final_path_score": 0.9425855268334623,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Aprotinin",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.9401103940747441,
+            "final_path_score": 0.9326483206631188,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "LPL",
+            "drug_name": "Omega-3-carboxylic acids",
+            "vg_similarity": 0.9783778707068819,
+            "gd_similarity": 0.9452944544781194,
+            "final_path_score": 0.924855175563326,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PCSK9",
+            "drug_name": "Alirocumab",
+            "vg_similarity": 0.9844142004904114,
+            "gd_similarity": 0.9362551573931761,
+            "final_path_score": 0.9216628722202277,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "LPL",
+            "drug_name": "Glycyrrhizic acid",
+            "vg_similarity": 0.9783778707068819,
+            "gd_similarity": 0.9264662039763587,
+            "final_path_score": 0.9064340319282775,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "APOC3",
+            "drug_name": "Volanesorsen",
+            "vg_similarity": 0.9105412448088657,
+            "gd_similarity": 0.9944185247689005,
+            "final_path_score": 0.9054590814040705,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "LDLR",
+            "drug_name": "alpha-Tocopherol acetate",
+            "vg_similarity": 0.9533123944874491,
+            "gd_similarity": 0.9452163148104352,
+            "final_path_score": 0.9010864283805385,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "LPL",
+            "drug_name": "Semaglutide",
+            "vg_similarity": 0.9783778707068819,
+            "gd_similarity": 0.9192726631562308,
+            "final_path_score": 0.8993960307778377,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "APOC3",
+            "drug_name": "Copper",
+            "vg_similarity": 0.9105412448088657,
+            "gd_similarity": 0.9846943901460324,
+            "final_path_score": 0.8966048557598753,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "LDLR",
+            "drug_name": "Ubidecarenone",
+            "vg_similarity": 0.9533123944874491,
+            "gd_similarity": 0.9371490805402568,
+            "final_path_score": 0.8933958339615435,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Reteplase",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.8953741196904533,
+            "final_path_score": 0.888267137942235,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "APOA1",
+            "drug_name": "Copper",
+            "vg_similarity": 0.904866738130817,
+            "gd_similarity": 0.9788410718692487,
+            "final_path_score": 0.8857207278507997,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "APOA1",
+            "drug_name": "Zinc sulfate, unspecified form",
+            "vg_similarity": 0.904866738130817,
+            "gd_similarity": 0.9781312028900105,
+            "final_path_score": 0.8850783910230562,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "FADS1",
+            "drug_name": "Evening primrose oil",
+            "vg_similarity": 0.981271379910469,
+            "gd_similarity": 0.8968300865028692,
+            "final_path_score": 0.8800336965278958,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Tranexamic acid",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.8835010325484984,
+            "final_path_score": 0.8764882927621117,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "APOA4",
+            "drug_name": "Copper",
+            "vg_similarity": 0.892352339682874,
+            "gd_similarity": 0.9744422155384288,
+            "final_path_score": 0.8695457909214803,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Anistreplase",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.8691973129683879,
+            "final_path_score": 0.8622981081521907,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "APOA1",
+            "drug_name": "Zinc acetate",
+            "vg_similarity": 0.904866738130817,
+            "gd_similarity": 0.9503910351838819,
+            "final_path_score": 0.8599772359556097,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "UBC",
+            "drug_name": "N-Formylmethionine",
+            "vg_similarity": 0.898571587909413,
+            "gd_similarity": 0.9487108909438744,
+            "final_path_score": 0.8524846517423912,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Tenecteplase",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.8572095589315086,
+            "final_path_score": 0.8504055062391763,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Streptokinase",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.8514034733848594,
+            "final_path_score": 0.8446455061702076,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "APOA4",
+            "drug_name": "Zinc acetate",
+            "vg_similarity": 0.892352339682874,
+            "gd_similarity": 0.9405488035151968,
+            "final_path_score": 0.8393009254027135,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "APOA1",
+            "drug_name": "Zinc chloride",
+            "vg_similarity": 0.904866738130817,
+            "gd_similarity": 0.925401735177617,
+            "final_path_score": 0.8373652495707684,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Alteplase",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.8404173796073223,
+            "final_path_score": 0.8337466138945278,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Desmoteplase",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.8403124359092486,
+            "final_path_score": 0.833642503181159,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Urokinase",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.8375287572416468,
+            "final_path_score": 0.8308809198065172,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "LDLR",
+            "drug_name": "Porfimer sodium",
+            "vg_similarity": 0.9533123944874491,
+            "gd_similarity": 0.8633725564483684,
+            "final_path_score": 0.8230637591225444,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "FADS1",
+            "drug_name": "Icosapent",
+            "vg_similarity": 0.981271379910469,
+            "gd_similarity": 0.8335391396737605,
+            "final_path_score": 0.8179281017970561,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "APOA1",
+            "drug_name": "Zinc",
+            "vg_similarity": 0.904866738130817,
+            "gd_similarity": 0.8921912321579663,
+            "final_path_score": 0.8073141700316934,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Gabexate",
+            "vg_similarity": 0.9920625562075936,
+            "gd_similarity": 0.7987843422966042,
+            "final_path_score": 0.7924440364773706,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "APOA4",
+            "drug_name": "Zinc",
+            "vg_similarity": 0.892352339682874,
+            "gd_similarity": 0.8739673885001951,
+            "final_path_score": 0.7798868439346803,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "ALDH1A2",
+            "drug_name": "Vitamin A",
+            "vg_similarity": 0.981036236359836,
+            "gd_similarity": 0.7859644991721645,
+            "final_path_score": 0.7710596541803036,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "LDLR",
+            "drug_name": "Tocopherol",
+            "vg_similarity": 0.9533123944874491,
+            "gd_similarity": 0.7207646901493602,
+            "final_path_score": 0.6871139126282909,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "ALDH1A2",
+            "drug_name": "Tretinoin",
+            "vg_similarity": 0.981036236359836,
+            "gd_similarity": 0.6840196617424598,
+            "final_path_score": 0.6710480745519508,
+            "graph_support": 0.39988856013445084
+          },
+          "_display": "KG.2 — Drug Path"
+        }
+      ]
+    }
+  }
+}

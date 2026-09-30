@@ -1,0 +1,2200 @@
+{
+  "variant": {
+    "rsid": "rs6982502",
+    "chrom": "8",
+    "pos_hg38": 125467120,
+    "ref": "C",
+    "alt": "T",
+    "variant_class": "non-coding",
+    "trait": "TC",
+    "source_GWAS": "GCST90018754",
+    "most_severe_consequence": "intron_variant"
+  },
+  "evidence": {
+    "GWAS": {
+      "_display": "GWAS — Summary Statistics",
+      "meta": {
+        "module": "GWAS",
+        "scenario": "gwas-summary",
+        "tool": "GWAS",
+        "result_type": "single_variant_association"
+      },
+      "provenance": {
+        "input_file": "summarystats_clean.tsv",
+        "source_GWAS": "GCST90018754",
+        "study": "Sakaue S. et al. 2021 (Nature Genetics)",
+        "population": "East Asian",
+        "effective_n": 135808,
+        "genome_build": "GRCh38/hg38"
+      },
+      "data": {
+        "effect_allele": "T",
+        "non_effect_allele": "C",
+        "effect_allele_frequency": 0.564434,
+        "beta": -0.0329372,
+        "se": 0.00358228,
+        "p_value": 3.8e-20,
+        "is_genome_wide_significant": true,
+        "sample_size": 135808,
+        "minor_allele_frequency": 0.435566,
+        "maf_category": "common",
+        "z_score": -9.194479
+      }
+    },
+    "MAF": {
+      "_display": "MAF — Population Allele Frequency",
+      "meta": {
+        "module": "MAF",
+        "scenario": "population-af",
+        "tool": "GWAS-summary-stats",
+        "result_type": "population_allele_frequency"
+      },
+      "provenance": {
+        "input_file": "summarystats_clean.tsv",
+        "source": "GCST90018754",
+        "population": "East Asian",
+        "note": "MAF from GWAS summary statistics; gnomAD lookup not performed"
+      },
+      "data": {
+        "gwas_maf": 0.435566,
+        "maf_category": "common"
+      }
+    },
+    "M1": {
+      "_display": "M1 — Fine-mapping",
+      "ABF": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping",
+          "tool": "coloc-ABF",
+          "result_type": "posterior_probability"
+        },
+        "provenance": {
+          "input_file": "ABF_finemap_results.txt",
+          "tool_version": "coloc 5.2.3",
+          "parameters": {
+            "prior_sd": 0.2
+          }
+        },
+        "data": {
+          "posterior_probability": 0.3132212544,
+          "in_95_credible_set": true
+        },
+        "_display": "M1.2 — ABF"
+      },
+      "SuSiE": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping",
+          "tool": "SuSiE-RSS",
+          "result_type": "credible_set_membership"
+        },
+        "provenance": {
+          "input_file": "SuSiE_finemap_results_hg19.txt",
+          "tool_version": "susieR 0.12.35",
+          "parameters": {
+            "L": 10,
+            "coverage": 0.95
+          }
+        },
+        "data": {
+          "pip": 0.0,
+          "in_credible_set": false
+        },
+        "_display": "M1.3 — SuSiE"
+      },
+      "FINEMAP": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping",
+          "tool": "FINEMAP",
+          "result_type": "posterior_inclusion_probability"
+        },
+        "provenance": {
+          "input_file": "FINEMAP_all_loci.sorted_by_pip.tsv",
+          "tool_version": "FINEMAP 1.4.1",
+          "parameters": {
+            "n_causal": 5
+          }
+        },
+        "data": {
+          "pip": 0.997219,
+          "log10_bf": 5.67014
+        },
+        "_display": "M1.4 — FINEMAP"
+      },
+      "Consensus": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping-integration",
+          "tool": "compare_methods.R",
+          "result_type": "cross_tool_consensus"
+        },
+        "provenance": {
+          "input_file": "finemap_comparison_hg19.txt",
+          "parameters": {
+            "highconf_threshold": 2
+          }
+        },
+        "data": {
+          "support_count": 2,
+          "highconf": true,
+          "abf_support": true,
+          "susie_support": false,
+          "finemap_support": true,
+          "concordant": true
+        },
+        "_display": "M1.5 — Consensus"
+      }
+    },
+    "M4": {
+      "_display": "M4 — Variant-to-Sequence/Protein Function",
+      "SpliceAI": [
+        {
+          "meta": {
+            "module": "M4",
+            "scenario": "variant2splice",
+            "tool": "SpliceAI",
+            "result_type": "splice_delta_score"
+          },
+          "provenance": {
+            "input_file": "spliceai_scores.csv",
+            "spliceai_version": "1.3.1",
+            "max_distance": 500
+          },
+          "data": {
+            "ds_ag": 0.0,
+            "ds_al": 0.0,
+            "ds_dg": 0.0,
+            "ds_dl": 0.0,
+            "ds_max": 0,
+            "gene_symbol": "TRIB1AL",
+            "gene_id": "ENSG00000253111.3_14",
+            "transcript_id": "ENST00000522815.1_3"
+          },
+          "_display": "M4.2 — SpliceAI"
+        }
+      ]
+    },
+    "M5": {
+      "_display": "M5 — Variant-to-Perturbation",
+      "SnpEff": {
+        "meta": {
+          "module": "M5",
+          "scenario": "variant2perturbation-annotation",
+          "tool": "SnpEff",
+          "result_type": "functional_annotation"
+        },
+        "provenance": {
+          "input_file": "snpeff_results.tsv",
+          "tool_version": "SnpEff 5.2",
+          "genome_build": "GRCh38/hg38"
+        },
+        "data": {
+          "effect": "intron_variant",
+          "impact": "MODIFIER",
+          "gene_symbol": "RP11-136O12.2",
+          "hgvs_c": "n.95+87C>T"
+        },
+        "_display": "M5.1 — SnpEff"
+      },
+      "MAVE_MPRA": {
+        "meta": {
+          "module": "M5",
+          "scenario": "variant2perturbation-experimental",
+          "tool": "VEP",
+          "result_type": "functional_annotation"
+        },
+        "provenance": {
+          "input_file": "parsed.tsv",
+          "vep_version": "VEP 115.2"
+        },
+        "data": {
+          "vep_consequence": "intron_variant,non_coding_transcript_variant",
+          "gene_symbol": "TRIB1AL",
+          "vep_impact": "MODIFIER",
+          "has_any_data": true
+        },
+        "_display": "M5.2 — MAVE/MPRA"
+      }
+    },
+    "M6": {
+      "_display": "M6 — Variant-to-ACMG Pathogenicity",
+      "Noncoding_ACMG": {
+        "meta": {
+          "module": "M6",
+          "scenario": "variant2acmg-noncoding",
+          "tool": "Ellingford-2022",
+          "result_type": "noncoding_pathogenicity_classification"
+        },
+        "provenance": {
+          "input_file": "acmg_classifications.tsv",
+          "ellingford_framework": "2022",
+          "spliceai_version": "1.3.1"
+        },
+        "data": {
+          "classification": "NCS2_Regulatory",
+          "evidence_pathogenic": [
+            "NCS2+NCP1"
+          ],
+          "n_criteria_met": 1,
+          "gene_snpeff": "RP11-136O12.2",
+          "pip": 0.313221254412364,
+          "highconf": true
+        },
+        "_display": "M6.1 — Non-coding ACMG"
+      }
+    },
+    "KG": {
+      "_display": "KG — Knowledge Graph",
+      "Variant_Gene_Association": [
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-variant-gene-association",
+            "tool": "Neo4j-Cypher",
+            "result_type": "variant_gene_association"
+          },
+          "provenance": {
+            "input_file": "m2a_direct.json"
+          },
+          "data": {
+            "gene_symbol": "TRIB1",
+            "variant_rsid": "rs6982502",
+            "vg_relationship_type": "association",
+            "lof_oeUpper": 0.845
+          },
+          "_display": "KG.1 — Variant-Gene Association"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-variant-gene-association",
+            "tool": "Neo4j-Cypher",
+            "result_type": "variant_gene_association"
+          },
+          "provenance": {
+            "input_file": "m2a_direct.json"
+          },
+          "data": {
+            "gene_symbol": "TRIB1AL",
+            "variant_rsid": "rs6982502",
+            "vg_relationship_type": "association"
+          },
+          "_display": "KG.1 — Variant-Gene Association"
+        }
+      ],
+      "Drug_Path": [
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Bicine",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.9924712924444653,
+            "final_path_score": 0.9633863704213343,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Aminocaproic acid",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.9912778455445291,
+            "final_path_score": 0.9622278981451355,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Copper",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.9614101563003575,
+            "final_path_score": 0.9332354981101241,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Aprotinin",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.9401103940747441,
+            "final_path_score": 0.9125599372373955,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Nandrolone decanoate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9920291865525902,
+            "final_path_score": 0.8783683286809881,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Testosterone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9893901270064062,
+            "final_path_score": 0.8760316370248415,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Oxandrolone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.989225532849778,
+            "final_path_score": 0.8758859010966774,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "LGD2941",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9892220216558377,
+            "final_path_score": 0.8758827921946463,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Tetrahydrogestrinone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.989196872419153,
+            "final_path_score": 0.875860524409289,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Periciazine",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9884681122918448,
+            "final_path_score": 0.8752152613225672,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Clascoterone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9882936661164777,
+            "final_path_score": 0.8750608021619104,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Darolutamide",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9882911071942988,
+            "final_path_score": 0.8750585364259542,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Fluphenazine",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9881037031511477,
+            "final_path_score": 0.8748926040336394,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Drostanolone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9879103348189187,
+            "final_path_score": 0.87472139070534,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Acetophenazine",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9875277334013461,
+            "final_path_score": 0.8743826255034088,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "1-Testosterone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.987487259528383,
+            "final_path_score": 0.8743467888882852,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Danazol",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9872582713615737,
+            "final_path_score": 0.8741440368361335,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Stanozolol",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9870976300756978,
+            "final_path_score": 0.8740018008820862,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Boldenone undecylenate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9867904806464228,
+            "final_path_score": 0.8737298428242944,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Prasterone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9853567190581844,
+            "final_path_score": 0.8724603531892522,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Segesterone acetate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9850154120609508,
+            "final_path_score": 0.8721581511363377,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Bicalutamide",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9846176916727452,
+            "final_path_score": 0.871805999206328,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Stanolone acetate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9836814009121776,
+            "final_path_score": 0.8709769831232658,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Ketodarolutamide",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9830678094890463,
+            "final_path_score": 0.8704336933893198,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "(R)-Bicalutamide",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9821449519509275,
+            "final_path_score": 0.8696165714292442,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Reteplase",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.8953741196904533,
+            "final_path_score": 0.8691346842015084,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Oxymetholone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9811869653181186,
+            "final_path_score": 0.8687683452591217,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Flufenamic acid",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9805643851820229,
+            "final_path_score": 0.8682170966859697,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Testosterone propionate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9803755203279525,
+            "final_path_score": 0.8680498708538418,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Stanolone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9802581514022433,
+            "final_path_score": 0.8679459493679503,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Ketoconazole",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9793743127570008,
+            "final_path_score": 0.8671633757459553,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Progesterone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9787637702637448,
+            "final_path_score": 0.8666227856134677,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Boldenone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9787333833522731,
+            "final_path_score": 0.8665958802552333,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Gestrinone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.978188928204531,
+            "final_path_score": 0.866113805569683,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "S-23",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9773411188003404,
+            "final_path_score": 0.8653631331706311,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Mibolerone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9773363466027353,
+            "final_path_score": 0.8653589077433036,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Eugenol",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9765262280712169,
+            "final_path_score": 0.8646416078188568,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Levonorgestrel",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9747084186820373,
+            "final_path_score": 0.863032072316597,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Norelgestromin",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9744157446637641,
+            "final_path_score": 0.8627729311625223,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Homosalate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9742485179687138,
+            "final_path_score": 0.8626248643166742,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Testosterone undecanoate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9742378675783716,
+            "final_path_score": 0.8626154341852914,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Spironolactone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9739046092617136,
+            "final_path_score": 0.8623203586425655,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Estrone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9738389312992808,
+            "final_path_score": 0.8622622056740085,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Tamoxifen",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9725918126900243,
+            "final_path_score": 0.8611579745653589,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Echinacoside",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9723672689249585,
+            "final_path_score": 0.8609591577015911,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "BMS-564929",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9723223308896025,
+            "final_path_score": 0.860919368401493,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Mitotane",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9717952678350614,
+            "final_path_score": 0.8604526931256016,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Norethisterone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.971246215101645,
+            "final_path_score": 0.8599665476186487,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Ligandrol",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9697314188630013,
+            "final_path_score": 0.8586253078058832,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Triclosan",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9696239207972418,
+            "final_path_score": 0.8585301262349803,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Tranexamic acid",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.8835010325484984,
+            "final_path_score": 0.8576095444675305,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Phenothiazine",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9674418230696479,
+            "final_path_score": 0.8565980404052619,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Norgestrel",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9658593915442572,
+            "final_path_score": 0.8551969145583099,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Enzacamene",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9655688837348845,
+            "final_path_score": 0.8549396914216861,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Nandrolone phenpropionate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9646379849877473,
+            "final_path_score": 0.8541154495669323,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Oxybenzone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9636968655958742,
+            "final_path_score": 0.8532821580886829,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Esculin",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9621194248404146,
+            "final_path_score": 0.8518854511986554,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Dimethylcurcumin",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9615399079032647,
+            "final_path_score": 0.8513723318968982,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "LGD-2226",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9613794568670393,
+            "final_path_score": 0.8512302643948177,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Fluoxymesterone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9611470171920927,
+            "final_path_score": 0.8510244562879903,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Testosterone cypionate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9610888152592457,
+            "final_path_score": 0.8509729227896076,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Metribolone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9605634771568867,
+            "final_path_score": 0.8505077748310429,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Flutamide",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9601809324459009,
+            "final_path_score": 0.8501690598385918,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Enzalutamide",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9592935200870106,
+            "final_path_score": 0.8493833219579978,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Ulipristal",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9571822002905369,
+            "final_path_score": 0.8475139047411674,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Drospirenone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9559593009818991,
+            "final_path_score": 0.8464311180284032,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Norgestimate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9558246618772205,
+            "final_path_score": 0.8463119050788703,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Apalutamide",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9539636516797543,
+            "final_path_score": 0.8446641184623422,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Methyltestosterone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9533506028248699,
+            "final_path_score": 0.8441213091323709,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Diethylstilbestrol",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9530699957568471,
+            "final_path_score": 0.8438728523685012,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Anistreplase",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.8691973129683879,
+            "final_path_score": 0.8437250033279404,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Nilutamide",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9478075839815082,
+            "final_path_score": 0.8392133767214199,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Testosterone enanthate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9462337395557434,
+            "final_path_score": 0.8378198541148251,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Cyproterone acetate",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9453221529134699,
+            "final_path_score": 0.8370127116977715,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Dienogest",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9413466008955688,
+            "final_path_score": 0.8334926550009689,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Calusterone",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9403528138539309,
+            "final_path_score": 0.8326127302218786,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Tenecteplase",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.8572095589315086,
+            "final_path_score": 0.8320885570760312,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "AR",
+            "drug_name": "Norethynodrel",
+            "vg_similarity": 0.8854258932979724,
+            "gd_similarity": 0.9374409332586768,
+            "final_path_score": 0.8300344757446488,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Streptokinase",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.8514034733848594,
+            "final_path_score": 0.8264526220885665,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Alteplase",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.8404173796073223,
+            "final_path_score": 0.8157884818862018,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Desmoteplase",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.8403124359092486,
+            "final_path_score": 0.8156866136214415,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Urokinase",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.8375287572416468,
+            "final_path_score": 0.8129845122020694,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        },
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-drug-paths",
+            "tool": "Neo4j-GDS-Node2Vec+PageRank",
+            "result_type": "variant_gene_drug_path"
+          },
+          "provenance": {
+            "input_file": "m5_paths.json",
+            "node2vec_walk_length": 10,
+            "node2vec_walks_per_node": 20,
+            "node2vec_embedding_dim": 32
+          },
+          "data": {
+            "gene_symbol": "PLG",
+            "drug_name": "Gabexate",
+            "vg_similarity": 0.9706944450236998,
+            "gd_similarity": 0.7987843422966042,
+            "final_path_score": 0.7753755238392234,
+            "graph_support": 0.6509148353221439
+          },
+          "_display": "KG.2 — Drug Path"
+        }
+      ]
+    }
+  }
+}

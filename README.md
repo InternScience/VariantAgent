@@ -13,9 +13,13 @@ produces — regardless of which analytical route a given study takes — to fol
 structure, so that statistical estimates, molecular observations, computational predictions and
 graph-nominated candidates remain distinguishable and comparable across studies and traits.
 
-![VariantAgent framework](figure/framework.png)
+The generated variant-centred evidence catalogue and trait-level reports are available through
+the [PGI portal](https://pgi.aigenomicsyulab.com/), together with an evidence-grounded
+conversational interface for querying and synthesizing the accumulated post-GWAS evidence.
 
 ## How VariantAgent works
+
+![VariantAgent framework](figure/framework.png)
 
 VariantAgent is a coordinated multi-agent architecture of five specialized agent types, run
 through four Orchestrator-guided stages: **planning**, **module execution and reflection**,
@@ -57,8 +61,7 @@ linking and path construction.
 
 ## Benchmarks
 
-*Numbers below are reported in the accompanying manuscript; see [Code and data
-availability](#code-and-data-availability).*
+*Numbers below are reported in the accompanying manuscript.*
 
 **Answer-level accuracy.** VariantAgent was evaluated on 313 questions drawn from three published
 genetic-reasoning benchmarks (GenomeArena, Biomni, SDE) against OpenCode, Tool Universe, Claude
@@ -86,14 +89,6 @@ operation.
 evidence units together with trait-level evidence-synthesis reports, indexed by PGI across 370
 traits.
 
-## Code and data availability
-
-- **Code** (this repository): `https://github.com/InternScience/VariantAgent`
-- **Data / evidence catalogue**: the PGI portal at
-  [pgi.aigenomicsyulab.com](https://pgi.aigenomicsyulab.com/) hosts the generated variant-centred
-  evidence-unit catalogue and trait-level reports, together with an evidence-grounded
-  conversational interface for querying and synthesizing the accumulated post-GWAS evidence.
-
 ## Status
 
 Research prototype accompanying the PGI manuscript. Interfaces may change.
@@ -106,10 +101,60 @@ Research prototype accompanying the PGI manuscript. Interfaces may change.
 docker/                 # containerized environment (Dockerfile + conda/pip specs + CLEAN package)
 figure/                 # architecture diagram used in this README
 benchmarks/             # raw benchmark question sets (CSV) referenced above
+demo/                   # input download instructions, variant-centred evidence, and final reports
 ```
 
-This repository release does not bundle the VariantAgent skill library. If you have your own
-`.claude/skills`-style library, mount it as described in step 2 of Quick start below.
+## System requirements
+
+### Operating system and architecture
+
+VariantAgent is distributed as a Docker-based environment targeting `linux/amd64`. Native
+execution on other architectures has not been tested.
+
+The recorded manuscript configuration and the host inspected for this release used:
+
+- Host operating system: Ubuntu 20.04.4 LTS (Linux kernel 5.10.25)
+- Architecture: x86_64 / amd64
+- Docker Engine: 26.1.3 (client and server)
+- Docker Buildx: v0.14.0
+- Claude Code: 2.1.168
+- cc-switch: 5.10.2
+- Model backend used for the manuscript benchmarks: DeepSeek-V4-Pro
+- Container base image: `interndiscoveryscp/scp-code:v2`
+
+The Docker image contains the `canton`, `biopathnet`, `clean`, `enrich`, `gsmap_env`, and `vep115`
+conda environments. The Dockerfile and exact conda, pip, R, and VEP dependency specifications are
+provided under [`docker/`](docker/).
+
+### Hardware
+
+No specialized hardware is required for the demo.
+Recommended:
+
+- CPU: 32 logical CPUs on AMD EPYC 9654 processors
+- RAM: 180 GiB
+- GPU: none
+
+Resource requirements for a full analysis depend strongly on GWAS size, the number and size of
+fine-mapping loci, LD matrices, and which optional modules are enabled.
+
+### Typical installation time
+
+Building the Docker image from scratch takes approximately **150 minutes** on
+the tested CPU and RAM configuration above, excluding variability in network download speed.
+
+### Demo runtime
+
+An end-to-end run of the included demo takes approximately **240 minutes** on
+the tested CPU and RAM configuration above.
+
+## Demo
+
+The [`demo/09_TC_Sakaue_2021/`](demo/09_TC_Sakaue_2021/) example traces an East Asian total
+cholesterol GWAS from the original summary statistics to 121 variant-centred evidence reports.
+The original summary statistics can be downloaded from the GWAS Catalog using the link provided
+in the demo README. The repository includes the resulting evidence units and final
+variant-gene-mechanism report.
 
 ## Quick start
 
@@ -119,10 +164,8 @@ single prompt.
 
 ### 1. Build the image
 
-The full analytical stack (statistical genetics + functional genomics + multi-omics tools across
-R and Python) is packaged as a Docker image with several isolated conda environments:
-`canton`, `biopathnet`, `clean`, `enrich`, `gsmap_env`, `vep115`. The Dockerfile and its build
-context (conda/pip environment specs + the CLEAN package) live under [`docker/`](docker/).
+Build the Docker environment described under [System requirements](#system-requirements). The
+Dockerfile and its build context live under [`docker/`](docker/).
 
 ```bash
 cd docker
@@ -139,15 +182,13 @@ public on Docker Hub and is pulled automatically during the build:
 docker pull interndiscoveryscp/scp-code:v2   # optional; buildx pulls it anyway
 ```
 
-> `GITHUB_PAT` is only needed to install a few R packages from GitHub during the build — supply
-> your own and never commit a real token.
+> Supply your own `GITHUB_PAT` and never commit a real token.
 
 ### 2. Start the container
 
-Mount a `workspace` that holds your GWAS summary statistics and receives all results. If you have
-your own skill library (this repository release does not bundle one — see "How VariantAgent works"
-above), optionally mount it too so the agent can discover it. The skills mount target inside the
-container decides the scope:
+Mount a `workspace` that holds your GWAS summary statistics and receives all results. To use a
+compatible skill library, mount it so the agent can discover it. The mount target determines its
+scope:
 
 - **Option A — global** (available in every project): mount to `/root/.claude/skills`
 - **Option B — project-scoped**: mount to `/workspace/your-project/.claude/skills`
@@ -190,11 +231,6 @@ that `-v` mount — no copying needed. Verify it's discoverable:
 ls /root/.claude/skills        # Option A (global); or your project's .claude/skills for Option B
 ```
 
-Skills follow the standard `.claude/skills/` convention, so any compatible agent (not just the
-`claude` CLI) can discover and run them. If you skipped the mount, VariantAgent's orchestrator,
-planner, executor, reflector and report agents still run — they just won't have a bundled
-skill-derived operational spec for each task.
-
 ### 5. Run the full post-GWAS pipeline
 
 Launch the agent:
@@ -231,5 +267,7 @@ The agent plans the pipeline, executes each module (fine-mapping, variant-to-gen
 sequence/protein function, perturbation, pathogenicity, drug, knowledge-graph reasoning),
 self-reflects, and writes standardized evidence reports under the output path.
 
-Most modules call public bioinformatics APIs (GWAS Catalog, Open Targets, Ensembl VEP, EFO/OLS)
-and standard Python scientific packages.
+## License
+
+The software and original project documentation are available under the [MIT License](LICENSE).
+Third-party datasets retain their source-specific terms.

@@ -31,3 +31,6 @@ benchmarks/*.png
 # Manuscript draft (not published)
 pgi ms - Google 文档.pdf
 初稿投递nature.pdf
+
+# Downloaded demo input (retrieve using the demo README)
+demo/09_TC_Sakaue_2021/input/GCST90018754_buildGRCh37.tsv.gz

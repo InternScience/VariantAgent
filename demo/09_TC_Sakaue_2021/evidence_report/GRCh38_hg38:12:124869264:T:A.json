@@ -1,0 +1,313 @@
+{
+  "variant": {
+    "rsid": "rs67053123",
+    "chrom": "12",
+    "pos_hg38": 124869264,
+    "ref": "T",
+    "alt": "A",
+    "variant_class": "non-coding",
+    "trait": "TC",
+    "source_GWAS": "GCST90018754",
+    "most_severe_consequence": "intron_variant"
+  },
+  "evidence": {
+    "GWAS": {
+      "_display": "GWAS — Summary Statistics",
+      "meta": {
+        "module": "GWAS",
+        "scenario": "gwas-summary",
+        "tool": "GWAS",
+        "result_type": "single_variant_association"
+      },
+      "provenance": {
+        "input_file": "summarystats_clean.tsv",
+        "source_GWAS": "GCST90018754",
+        "study": "Sakaue S. et al. 2021 (Nature Genetics)",
+        "population": "East Asian",
+        "effective_n": 135808,
+        "genome_build": "GRCh38/hg38"
+      },
+      "data": {
+        "effect_allele": "A",
+        "non_effect_allele": "T",
+        "effect_allele_frequency": 0.287466,
+        "beta": 0.0285864,
+        "se": 0.00406629,
+        "p_value": 2.1e-12,
+        "is_genome_wide_significant": true,
+        "sample_size": 135808,
+        "minor_allele_frequency": 0.287466,
+        "maf_category": "common",
+        "z_score": 7.030094
+      }
+    },
+    "MAF": {
+      "_display": "MAF — Population Allele Frequency",
+      "meta": {
+        "module": "MAF",
+        "scenario": "population-af",
+        "tool": "GWAS-summary-stats",
+        "result_type": "population_allele_frequency"
+      },
+      "provenance": {
+        "input_file": "summarystats_clean.tsv",
+        "source": "GCST90018754",
+        "population": "East Asian",
+        "note": "MAF from GWAS summary statistics; gnomAD lookup not performed"
+      },
+      "data": {
+        "gwas_maf": 0.287466,
+        "maf_category": "common"
+      }
+    },
+    "M1": {
+      "_display": "M1 — Fine-mapping",
+      "ABF": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping",
+          "tool": "coloc-ABF",
+          "result_type": "posterior_probability"
+        },
+        "provenance": {
+          "input_file": "ABF_finemap_results.txt",
+          "tool_version": "coloc 5.2.3",
+          "parameters": {
+            "prior_sd": 0.2
+          }
+        },
+        "data": {
+          "posterior_probability": 0.3880509906,
+          "in_95_credible_set": true
+        },
+        "_display": "M1.2 — ABF"
+      },
+      "SuSiE": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping",
+          "tool": "SuSiE-RSS",
+          "result_type": "credible_set_membership"
+        },
+        "provenance": {
+          "input_file": "SuSiE_finemap_results_hg19.txt",
+          "tool_version": "susieR 0.12.35",
+          "parameters": {
+            "L": 10,
+            "coverage": 0.95
+          }
+        },
+        "data": {
+          "pip": 0.0,
+          "in_credible_set": false
+        },
+        "_display": "M1.3 — SuSiE"
+      },
+      "FINEMAP": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping",
+          "tool": "FINEMAP",
+          "result_type": "posterior_inclusion_probability"
+        },
+        "provenance": {
+          "input_file": "FINEMAP_all_loci.sorted_by_pip.tsv",
+          "tool_version": "FINEMAP 1.4.1",
+          "parameters": {
+            "n_causal": 5
+          }
+        },
+        "data": {
+          "pip": 1.0,
+          "log10_bf": 13.2671
+        },
+        "_display": "M1.4 — FINEMAP"
+      },
+      "Consensus": {
+        "meta": {
+          "module": "M1",
+          "scenario": "fine-mapping-integration",
+          "tool": "compare_methods.R",
+          "result_type": "cross_tool_consensus"
+        },
+        "provenance": {
+          "input_file": "finemap_comparison_hg19.txt",
+          "parameters": {
+            "highconf_threshold": 2
+          }
+        },
+        "data": {
+          "support_count": 2,
+          "highconf": true,
+          "abf_support": true,
+          "susie_support": false,
+          "finemap_support": true,
+          "concordant": true
+        },
+        "_display": "M1.5 — Consensus"
+      }
+    },
+    "M2": {
+      "_display": "M2 — Variant-to-Gene",
+      "Integrated_V2G": {
+        "meta": {
+          "module": "M2",
+          "scenario": "variant2gene-integration",
+          "tool": "multi-source-V2G",
+          "result_type": "integrated_gene_score"
+        },
+        "provenance": {
+          "input_file": "integrated_evidence_detailed_merged_with_magma.txt",
+          "fine_mapping_method": "merged"
+        },
+        "data": {
+          "gene_symbol": "SCARB1",
+          "total_score": 4.234442971844997,
+          "n_sources": 3,
+          "sources": [
+            "ABF",
+            "FINEMAP",
+            "MAGMA"
+          ],
+          "magma_zstat": 7.7029,
+          "magma_score": 6.6517e-15
+        },
+        "_display": "M2.6 — Integrated V2G"
+      }
+    },
+    "M5": {
+      "_display": "M5 — Variant-to-Perturbation",
+      "SnpEff": {
+        "meta": {
+          "module": "M5",
+          "scenario": "variant2perturbation-annotation",
+          "tool": "SnpEff",
+          "result_type": "functional_annotation"
+        },
+        "provenance": {
+          "input_file": "snpeff_results.tsv",
+          "tool_version": "SnpEff 5.2",
+          "genome_build": "GRCh38/hg38"
+        },
+        "data": {
+          "effect": "intron_variant",
+          "impact": "MODIFIER",
+          "gene_symbol": "SCARB1",
+          "hgvs_c": "n.293-2127A>T"
+        },
+        "_display": "M5.1 — SnpEff"
+      },
+      "MAVE_MPRA": {
+        "meta": {
+          "module": "M5",
+          "scenario": "variant2perturbation-experimental",
+          "tool": "VEP",
+          "result_type": "functional_annotation"
+        },
+        "provenance": {
+          "input_file": "parsed.tsv",
+          "vep_version": "VEP 115.2"
+        },
+        "data": {
+          "vep_consequence": "intron_variant,non_coding_transcript_variant",
+          "gene_symbol": "LOC105370050",
+          "vep_impact": "MODIFIER",
+          "has_any_data": true
+        },
+        "_display": "M5.2 — MAVE/MPRA"
+      }
+    },
+    "M6": {
+      "_display": "M6 — Variant-to-ACMG Pathogenicity",
+      "Noncoding_ACMG": {
+        "meta": {
+          "module": "M6",
+          "scenario": "variant2acmg-noncoding",
+          "tool": "Ellingford-2022",
+          "result_type": "noncoding_pathogenicity_classification"
+        },
+        "provenance": {
+          "input_file": "acmg_classifications.tsv",
+          "ellingford_framework": "2022",
+          "spliceai_version": "1.3.1"
+        },
+        "data": {
+          "classification": "NCS2_Regulatory",
+          "evidence_pathogenic": [
+            "NCS2+NCP1"
+          ],
+          "n_criteria_met": 1,
+          "gene_snpeff": "SCARB1",
+          "pip": 0.388050990614999,
+          "highconf": true
+        },
+        "_display": "M6.1 — Non-coding ACMG"
+      }
+    },
+    "KG": {
+      "_display": "KG — Knowledge Graph",
+      "Variant_Gene_Association": [
+        {
+          "meta": {
+            "module": "KG",
+            "scenario": "knowledge-graph-variant-gene-association",
+            "tool": "Neo4j-Cypher",
+            "result_type": "variant_gene_association"
+          },
+          "provenance": {
+            "input_file": "m2a_direct.json"
+          },
+          "data": {
+            "gene_symbol": "SCARB1",
+            "variant_rsid": "rs67053123",
+            "vg_relationship_type": "association",
+            "lof_oeUpper": 0.71
+          },
+          "_display": "KG.1 — Variant-Gene Association"
+        }
+      ]
+    },
+    "P5": {
+      "_display": "P5 — External Database Queries",
+      "GWAS_Catalog": [
+        {
+          "meta": {
+            "module": "P5",
+            "scenario": "external-replication",
+            "tool": "GWAS-Catalog",
+            "result_type": "gwas_association"
+          },
+          "provenance": {
+            "input_file": "05a_gwas_catalog_snp_associations.tsv",
+            "gwas_catalog_version": "2024"
+          },
+          "data": {
+            "trait": "LDL (EFO_0004611)",
+            "p_value": 5e-10
+          },
+          "_display": "P5.1 — GWAS Catalog"
+        }
+      ],
+      "GTEx_Tissue_Expression": [
+        {
+          "meta": {
+            "module": "P5",
+            "scenario": "tissue-expression",
+            "tool": "GTEx",
+            "result_type": "tissue_expression"
+          },
+          "provenance": {
+            "input_file": "03_gtex_liver_expression.tsv",
+            "gtex_version": "GTEx v10"
+          },
+          "data": {
+            "gene_symbol": "SCARB1",
+            "disease_tissue": "liver",
+            "disease_tissue_tpm": 102.08
+          },
+          "_display": "P5.9 — GTEx Tissue Expression"
+        }
+      ]
+    }
+  }
+}
